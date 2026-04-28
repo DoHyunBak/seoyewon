@@ -13,11 +13,8 @@ export function DesignPicture(): JSX.Element {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="section-shell section-spacing" id="design-picture">
-      <SectionTitle
-        eyebrow="Design Picture"
-        title="Design Picture Gallery"
-      />
+    <section className="section-shell section-spacing flex flex-col gap-8" id="design-picture">
+      <SectionTitle eyebrow="Design Picture" title="Design Picture Gallery" />
 
       <motion.article
         className="card gradient-border-card p-6 sm:p-8"

@@ -4,11 +4,8 @@ import { SectionTitle } from "./SectionTitle";
 
 export function DownloadSection(): JSX.Element {
   return (
-    <section className="section-shell section-spacing" id="download">
-      <SectionTitle
-        eyebrow="PDF Download"
-        title="Downloadable Portfolio Materials"
-      />
+    <section className="section-shell section-spacing flex flex-col gap-8" id="download">
+      <SectionTitle eyebrow="PDF Download" title="Downloadable Portfolio Materials" />
 
       <div className="card gradient-border-card flex flex-col gap-6 p-6 sm:p-8 lg:flex-row lg:items-center lg:justify-between">
         <div className="max-w-2xl">

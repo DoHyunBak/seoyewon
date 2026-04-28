@@ -79,11 +79,8 @@ export function Licence(): JSX.Element {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="section-shell section-spacing" id="licence">
-      <SectionTitle
-        eyebrow="Certifications"
-        title="Certifications"
-      />
+    <section className="section-shell section-spacing flex flex-col gap-8" id="licence">
+      <SectionTitle eyebrow="Certifications" title="Certifications" />
 
       <motion.article
         className="card gradient-border-card p-6 sm:p-8"
@@ -94,12 +91,12 @@ export function Licence(): JSX.Element {
       >
         <div className="space-y-8">
           <div>
-            <h3 className="text-xl font-bold text-navy mb-4">Current Certifications</h3>
+            <h3 className="mb-4 text-xl font-bold text-navy">Current Certifications</h3>
             <CertificationCardGrid rows={ownedCertifications} />
           </div>
-          
+
           <div className="border-t border-border/30 pt-8">
-            <h3 className="text-xl font-bold text-navy mb-4">Learning Plan</h3>
+            <h3 className="mb-4 text-xl font-bold text-navy">Learning Plan</h3>
             <CertificationCardGrid rows={plannedCertifications} />
           </div>
         </div>

@@ -7,11 +7,8 @@ export function Language(): JSX.Element {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="section-shell section-spacing" id="language">
-      <SectionTitle
-        eyebrow="Language"
-        title="Language"
-      />
+    <section className="section-shell section-spacing flex flex-col gap-8" id="language">
+      <SectionTitle eyebrow="Language" title="Language" />
 
       <div className="grid gap-4 md:grid-cols-3">
         {languageItems.map((item, index) => (

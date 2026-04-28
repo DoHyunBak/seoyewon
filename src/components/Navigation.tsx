@@ -2,7 +2,7 @@ import { navigationItems, portfolioOwner } from "../data/portfolio";
 
 export function Navigation(): JSX.Element {
   return (
-    <header className="card gradient-border-card ios-nav sticky top-0 z-40 rounded-none">
+    <header className="card gradient-border-card ios-nav sticky top-0 z-50 rounded-none">
       <div className="section-shell flex min-h-16 flex-col justify-center gap-3 py-3 sm:flex-row sm:items-center sm:justify-between">
         <a className="text-sm font-bold text-navy outline-none focus-visible:ring-4 focus-visible:ring-pink/40" href="#hero">
           {portfolioOwner.name}

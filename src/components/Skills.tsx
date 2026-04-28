@@ -9,11 +9,8 @@ export function Skills(): JSX.Element {
   const allSkills = skillGroups.flatMap((group) => group.skills);
 
   return (
-    <section className="section-shell section-spacing" id="skills">
-      <SectionTitle
-        eyebrow="Skills & Certifications"
-        title="Professional Skills"
-      />
+    <section className="section-shell section-spacing flex flex-col gap-8" id="skills">
+      <SectionTitle eyebrow="Skills & Certifications" title="Professional Skills" />
 
       <motion.article
         className="card gradient-border-card p-6 sm:p-8"

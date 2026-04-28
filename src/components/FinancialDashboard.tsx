@@ -76,11 +76,8 @@ export function FinancialDashboard(): JSX.Element {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="section-shell section-spacing" id="dashboard">
-      <SectionTitle
-        eyebrow="Financial Dashboard"
-        title="Mini Dashboard for Numbers and Evidence"
-      />
+    <section className="section-shell section-spacing flex flex-col gap-8" id="dashboard">
+      <SectionTitle eyebrow="Financial Dashboard" title="Mini Dashboard for Numbers and Evidence" />
 
       <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
         {summaryStats.map((stat) => (

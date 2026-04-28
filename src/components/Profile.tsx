@@ -6,11 +6,8 @@ export function Profile(): JSX.Element {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="section-shell section-spacing" id="profile">
-      <SectionTitle
-        eyebrow="Profile"
-        title="Introduction"
-      />
+    <section className="section-shell section-spacing flex flex-col gap-8" id="profile">
+      <SectionTitle eyebrow="Profile" title="Introduction" />
 
       <motion.article
         className="card gradient-border-card max-w-4xl p-6 sm:p-8"

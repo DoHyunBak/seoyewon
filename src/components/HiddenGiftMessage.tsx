@@ -36,7 +36,7 @@ export function HiddenGiftMessage(): JSX.Element {
   }, [isOpen]);
 
   return (
-    <section className="section-shell pb-10 text-center" id="gift-message">
+    <section className="section-shell flex flex-col items-center gap-6 pb-10 text-center" id="gift-message">
       <button className="btn btn-soft soft-glow mx-auto" type="button" onClick={() => setOpenWithTransition(true)}>
         <Heart aria-hidden="true" className="floating-soft" size={17} />
         <span>Small Message</span>

@@ -6,10 +6,7 @@ export function Hero(): JSX.Element {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section
-      className="section-shell section-spacing hero-surface flex min-h-[calc(88vh-64px)] items-center"
-      id="hero"
-    >
+    <section className="section-shell section-spacing hero-surface" id="hero">
       <motion.div
         className="card gradient-border-card min-w-0 max-w-4xl p-8"
         initial={shouldReduceMotion ? false : { opacity: 0, y: 18 }}

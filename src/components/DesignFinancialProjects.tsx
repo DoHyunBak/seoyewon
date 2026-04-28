@@ -200,11 +200,8 @@ export function DesignFinancialProjects(): JSX.Element {
   };
 
   return (
-    <section className="section-shell section-spacing" id="projects">
-      <SectionTitle
-        eyebrow="Design Financial Projects"
-        title="Three Practical Portfolio Projects"
-      />
+    <section className="section-shell section-spacing flex flex-col gap-8" id="projects">
+      <SectionTitle eyebrow="Design Financial Projects" title="Three Practical Portfolio Projects" />
 
       <div className="grid gap-6">
         {designFinancialProjects.map((project, index) => (

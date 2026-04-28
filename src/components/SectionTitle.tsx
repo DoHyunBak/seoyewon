@@ -5,10 +5,13 @@ type SectionTitleProps = {
   title: string;
   description?: string;
   align?: "left" | "center";
+  titleClassName?: string;
 };
 
-export function SectionTitle({ eyebrow, title, description, align = "center" }: SectionTitleProps): JSX.Element {
+export function SectionTitle({ eyebrow, title, description, align = "center", titleClassName }: SectionTitleProps): JSX.Element {
   const shouldReduceMotion = useReducedMotion();
+  const titleClasses =
+    titleClassName ?? "text-h2 font-bold leading-tight text-navy md:text-h2-md";
 
   return (
     <motion.div
@@ -19,7 +22,7 @@ export function SectionTitle({ eyebrow, title, description, align = "center" }: 
       transition={{ duration: 0.26, ease: "easeOut" }}
     >
       <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-green">{eyebrow}</p>
-      <h2 className="text-[2rem] font-bold leading-tight text-navy md:text-[2.5rem]">{title}</h2>
+      <h2 className={titleClasses}>{title}</h2>
       {description ? <p className="mt-4 text-base leading-7 text-muted md:text-lg">{description}</p> : null}
     </motion.div>
   );

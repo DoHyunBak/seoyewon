@@ -7,7 +7,7 @@ export function Profile(): JSX.Element {
 
   return (
     <section className="section-shell section-spacing flex flex-col gap-8" id="profile">
-      <SectionTitle eyebrow="Profile" title="Introduction" />
+      <SectionTitle eyebrow="Profile" title="Introduction" titleClassName="text-[2rem] font-bold leading-tight text-navy md:text-[2.5rem]" />
 
       <motion.article
         className="content-shell card gradient-border-card p-6 sm:p-8"

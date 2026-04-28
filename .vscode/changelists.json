@@ -3,26 +3,16 @@
     {
       "name": "Default",
       "files": [
-        "src/styles/globals.css",
-        "public/favicon.svg",
-        "src/App.tsx",
-        "src/components/ContactSection.tsx",
-        "src/components/CursorWave.tsx",
-        "src/components/DesignFinancialProjects.tsx",
-        "src/components/FinancialDashboard.tsx",
+        "tailwind.config.ts",
+        ".vscode/changelists.json",
         "src/components/Hero.tsx",
-        "src/components/HiddenGiftMessage.tsx",
-        "src/components/Language.tsx",
-        "src/components/Licence.tsx",
-        "src/components/Navigation.tsx",
+        "src/components/SectionTitle.tsx",
         "src/components/Profile.tsx",
-        "src/components/ProjectCard.tsx",
-        "src/components/SkillChip.tsx",
         "src/components/Skills.tsx",
-        "src/data/languages.ts",
-        "src/data/portfolio.ts",
-        "src/components/ScrollToTopButton.tsx",
-        ".vscode/changelists.json"
+        "src/components/Licence.tsx",
+        "src/components/DesignPicture.tsx",
+        "src/components/Language.tsx",
+        "src/components/ContactSection.tsx"
       ]
     }
   ],

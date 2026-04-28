@@ -7,7 +7,7 @@ export function Language(): JSX.Element {
 
   return (
     <section className="section-shell section-spacing flex flex-col gap-8" id="language">
-      <SectionTitle eyebrow="Language" title="Language" />
+      <SectionTitle eyebrow="Language" title="Language" titleClassName="text-[2rem] font-bold leading-tight text-navy md:text-[2.5rem]" />
 
       <div className="content-shell grid gap-4 md:grid-cols-3">
         {languageItems.map((item, index) => (

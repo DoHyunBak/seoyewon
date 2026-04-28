@@ -23,7 +23,7 @@ const contactItems = [
 export function ContactSection(): JSX.Element {
   return (
     <section className="section-shell section-spacing flex flex-col gap-8" id="contact">
-      <SectionTitle eyebrow="Contact" title="Contact" />
+      <SectionTitle eyebrow="Contact" title="Contact" titleClassName="text-[2rem] font-bold leading-tight text-navy md:text-[2.5rem]" />
 
       <div className="content-shell card gradient-border-card p-6 sm:p-8">
         <div className="grid gap-4 md:grid-cols-2">

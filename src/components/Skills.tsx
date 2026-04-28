@@ -8,7 +8,7 @@ export function Skills(): JSX.Element {
 
   return (
     <section className="section-shell section-spacing flex flex-col gap-8" id="skills">
-      <SectionTitle eyebrow="Skill" title="Professional Skills" />
+      <SectionTitle eyebrow="Skill" title="Professional Skills" titleClassName="text-[2rem] font-bold leading-tight text-navy md:text-[2.5rem]" />
 
       <motion.article
         className="content-shell card gradient-border-card p-6 sm:p-8"

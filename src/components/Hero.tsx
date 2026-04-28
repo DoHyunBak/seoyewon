@@ -1,4 +1,4 @@
-import { ExternalLink, ReceiptText } from "lucide-react";
+import { ReceiptText } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 import { heroKeywords, portfolioOwner } from "../data/portfolio";
 import { monthlySummary } from "../data/dashboard";
@@ -48,10 +48,6 @@ export function Hero({ onEmailCopied }: HeroProps): JSX.Element {
 
         <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
           <PdfDownloadButton href={portfolioOwner.pdfUrl} label="PDF Portfolio" />
-          <a className="btn btn-secondary" href={portfolioOwner.notionUrl} rel="noopener noreferrer" target="_blank">
-            <ExternalLink aria-hidden="true" size={18} />
-            <span>Open Notion</span>
-          </a>
           <CopyEmailButton email={portfolioOwner.email} onCopied={onEmailCopied} variant="soft" />
         </div>
       </motion.div>

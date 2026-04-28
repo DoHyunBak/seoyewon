@@ -6,7 +6,6 @@ export const portfolioOwner = {
   role: "Design Financial Operations Assistant",
   headline: "디자인 감각과 비용 정리 감각을 함께 키워가는 지원자",
   email: "email@example.com",
-  notionUrl: "https://notion.so/placeholder",
   pdfUrl: "/portfolio.pdf",
   birth: "2004년생",
   education: "한양대학교 디자인대학 주얼리패션디자인학과 미술학사"
@@ -45,7 +44,7 @@ export const profileFacts = [
   { label: "희망 직무", value: "Design Finance / Creative Business Financial Support" },
   { label: "핵심 방향", value: "라이선스 비용, 제작비, 증빙, 정산 자료 정리" },
   { label: "연락처", value: portfolioOwner.email },
-  { label: "자료", value: "PDF Portfolio / Notion Portfolio" }
+  { label: "자료", value: "PDF Portfolio" }
 ];
 
 export const licenceGroups = [
@@ -155,6 +154,6 @@ export const skillGroups: SkillGroup[] = [
   {
     title: "Tools",
     icon: ClipboardCheck,
-    skills: ["더존", "Excel", "Notion", "Google Sheets", "PDF Report"]
+    skills: ["더존", "Excel", "Google Sheets", "PDF Report"]
   }
 ];

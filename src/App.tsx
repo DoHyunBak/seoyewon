@@ -2,11 +2,11 @@ import { useEffect, useRef, useState } from "react";
 import { Certificates } from "./components/Certificates";
 import { Contact } from "./components/Contact";
 import { CoreStrength } from "./components/CoreStrength";
-import { DesignFinancialProjects } from "./components/DesignFinancialProjects";
+import { DesignPicture } from "./components/DesignPicture";
 import { DownloadSection } from "./components/DownloadSection";
-import { FinancialDashboard } from "./components/FinancialDashboard";
 import { Hero } from "./components/Hero";
 import { HiddenGiftMessage } from "./components/HiddenGiftMessage";
+import { Licence } from "./components/Licence";
 import { Navigation } from "./components/Navigation";
 import { Profile } from "./components/Profile";
 import { Skills } from "./components/Skills";
@@ -44,8 +44,8 @@ export function App(): JSX.Element {
         <Profile />
         <CoreStrength />
         <Skills />
-        <DesignFinancialProjects />
-        <FinancialDashboard />
+        <Licence />
+        <DesignPicture />
         <Certificates />
         <DownloadSection onEmailCopied={showEmailCopiedToast} />
         <Contact onEmailCopied={showEmailCopiedToast} />

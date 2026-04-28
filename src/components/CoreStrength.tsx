@@ -9,8 +9,8 @@ export function CoreStrength(): JSX.Element {
     <section className="section-shell section-spacing" id="core-strength">
       <SectionTitle
         eyebrow="Core Strength"
-        title="디자인 재무 운영에 필요한 3가지 강점"
-        description="디자인 업계의 업무 흐름을 이해하고, 비용·증빙·리포트로 연결하는 역량을 간결하게 보여줍니다."
+        title="관심을 두고 키우는 3가지 역량"
+        description="전공 기반의 디자인 이해를 바탕으로, 비용·증빙·자료 정리까지 차분하게 확장해가고 있는 역량입니다."
       />
 
       <div className="grid gap-5 lg:grid-cols-3">

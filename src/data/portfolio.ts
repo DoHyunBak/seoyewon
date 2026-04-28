@@ -4,17 +4,19 @@ import type { LucideIcon } from "lucide-react";
 export const portfolioOwner = {
   name: "서예원",
   role: "Design Financial Operations Assistant",
-  headline: "디자인 업계를 이해하고, 숫자와 정산 흐름을 정리하는 지원자",
+  headline: "디자인 감각과 비용 정리 감각을 함께 키워가는 지원자",
   email: "email@example.com",
   notionUrl: "https://notion.so/placeholder",
-  pdfUrl: "/portfolio.pdf"
+  pdfUrl: "/portfolio.pdf",
+  birth: "2004년생",
+  education: "한양대학교 디자인대학 주얼리패션디자인학과 미술학사"
 };
 
 export const navigationItems = [
   { label: "Profile", href: "#profile" },
   { label: "Strength", href: "#core-strength" },
-  { label: "Projects", href: "#projects" },
-  { label: "Dashboard", href: "#dashboard" },
+  { label: "Licence", href: "#licence" },
+  { label: "Design Picture", href: "#design-picture" },
   { label: "Contact", href: "#contact" }
 ];
 
@@ -31,16 +33,60 @@ export const heroKeywords = [
 ];
 
 export const profileHighlights = [
-  "디자인 프로젝트의 매출, 외주비, 라이선스 비용, 증빙 자료, 정산 일정을 체계적으로 정리하는 방향을 지향합니다.",
-  "회계와 세무 기본기를 디자인 업계 맥락에 연결해, 프로젝트별 비용 구조와 리포트 흐름을 보기 쉽게 전달하는 포트폴리오입니다.",
-  "실제 경력이나 자격 취득 여부는 placeholder로 관리하며, 지원 전 개인 정보와 실제 이력에 맞게 수정할 수 있습니다."
+  "주얼리·패션 디자인을 전공하며 디자인 결과물뿐 아니라 제작 과정, 재료, 비용 구조에도 관심을 두고 있습니다.",
+  "회계와 세무 기본기를 디자인 업계의 라이선스 비용, 제작비, 증빙 정리 흐름과 연결해 학습하고 있습니다.",
+  "경력처럼 과장하기보다 학력, 학습 중인 역량, 정리 가능한 업무 범위를 차분하게 보여주는 포트폴리오입니다."
 ];
 
 export const profileFacts = [
+  { label: "출생연도", value: portfolioOwner.birth },
+  { label: "학력", value: portfolioOwner.education },
   { label: "희망 직무", value: "Design Finance / Creative Business Financial Support" },
-  { label: "핵심 방향", value: "프로젝트 비용, 증빙, 정산, 월간 리포트 정리" },
+  { label: "핵심 방향", value: "라이선스 비용, 제작비, 증빙, 정산 자료 정리" },
   { label: "연락처", value: portfolioOwner.email },
   { label: "자료", value: "PDF Portfolio / Notion Portfolio" }
+];
+
+export const licenceItems = [
+  {
+    title: "Design Licence Cost",
+    status: "학습 중",
+    description: "폰트, 이미지, 소스, 제작물 사용 비용을 디자인 프로젝트 비용 항목으로 분류하는 학습입니다.",
+    points: ["폰트·이미지 라이선스 비용 구분", "상업적 사용 범위 확인", "프로젝트별 증빙 자료 정리"]
+  },
+  {
+    title: "Accounting Certificate",
+    status: "취득 예정",
+    description: "전산회계와 전산세무 기본기를 바탕으로 디자인 업계 비용 정리 흐름을 이해하려는 준비 항목입니다.",
+    points: ["전산회계 1급 취득 예정", "전산세무 2급 학습 중", "부가세·원천세 기본 용어 학습"]
+  },
+  {
+    title: "Evidence Basics",
+    status: "활용 가능",
+    description: "세금계산서, 카드전표, 현금영수증을 항목별로 나누어 정리하는 기초 역량입니다.",
+    points: ["세금계산서와 카드전표 분류", "외주비 지급 상태 체크", "월별 정리표 구성"]
+  }
+];
+
+export const designPictures = [
+  {
+    title: "Jewelry Design",
+    category: "Portfolio Image 01",
+    description: "주얼리 디자인 작업 이미지를 배치할 수 있는 영역입니다.",
+    tone: "navy"
+  },
+  {
+    title: "Fashion Detail",
+    category: "Portfolio Image 02",
+    description: "패션 소재, 디테일, 스타일링 이미지를 배치할 수 있는 영역입니다.",
+    tone: "green"
+  },
+  {
+    title: "Mood Board",
+    category: "Portfolio Image 03",
+    description: "컬러, 재료, 무드보드 이미지를 배치할 수 있는 영역입니다.",
+    tone: "pink"
+  }
 ];
 
 export type Strength = {
@@ -53,7 +99,7 @@ export type Strength = {
 export const coreStrengths: Strength[] = [
   {
     title: "Design Business Understanding",
-    description: "Creative Workflow와 프로젝트 비용 흐름을 연결해 디자인 비즈니스 구조를 파악합니다.",
+    description: "Creative Workflow와 프로젝트 비용 흐름을 연결해 디자인 비즈니스 구조를 파악해가고 있습니다.",
     icon: BriefcaseBusiness,
     points: [
       "디자인 프로젝트 단위 매출 구조 이해",
@@ -64,7 +110,7 @@ export const coreStrengths: Strength[] = [
   },
   {
     title: "Financial Organization",
-    description: "증빙과 정산 항목을 누락 없이 분류해 회계 처리 전 단계의 정리 품질을 높입니다.",
+    description: "증빙과 정산 항목을 항목별로 분류하며 회계 처리 전 단계의 정리 방식을 익히고 있습니다.",
     icon: ReceiptText,
     points: [
       "세금계산서, 카드전표, 현금영수증 정리",
@@ -75,7 +121,7 @@ export const coreStrengths: Strength[] = [
   },
   {
     title: "Report & Data Readability",
-    description: "Financial Data를 표, 차트, KPI로 정리해 의사결정 가능한 형태로 전달합니다.",
+    description: "Financial Data를 표와 요약 자료로 읽기 쉽게 정리하는 방향을 학습하고 있습니다.",
     icon: BarChart3,
     points: [
       "월간 매출·비용 리포트",

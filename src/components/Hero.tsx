@@ -25,12 +25,9 @@ export function Hero({ onEmailCopied }: HeroProps): JSX.Element {
           Design + Financial Portfolio
         </p>
         <h1 className="max-w-4xl text-[2.25rem] font-bold leading-[1.1] text-navy [overflow-wrap:anywhere] sm:text-[3rem] lg:text-[3.5rem]">
-          <span className="block sm:inline">디자인 업계를</span>
-          <span className="block sm:inline"> 이해하고,</span>
-          <br className="hidden sm:block" />
-          <span className="block">프로젝트 비용과</span>
-          <span className="block">정산 흐름을 명확하게</span>
-          <span className="block">정리하는 사람입니다.</span>
+          <span className="block">디자인을 전공하며,</span>
+          <span className="block">비용과 정산 흐름도</span>
+          <span className="block">차분히 배우고 있습니다.</span>
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-8 text-muted [overflow-wrap:anywhere]">
           <span className="block">{portfolioOwner.name} · {portfolioOwner.role}</span>

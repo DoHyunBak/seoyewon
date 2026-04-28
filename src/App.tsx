@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from "react";
-import { Certificates } from "./components/Certificates";
 import { Contact } from "./components/Contact";
 import { CoreStrength } from "./components/CoreStrength";
 import { DesignPicture } from "./components/DesignPicture";
 import { DownloadSection } from "./components/DownloadSection";
 import { Hero } from "./components/Hero";
 import { HiddenGiftMessage } from "./components/HiddenGiftMessage";
+import { Language } from "./components/Language";
 import { Licence } from "./components/Licence";
 import { Navigation } from "./components/Navigation";
 import { Profile } from "./components/Profile";
@@ -46,7 +46,7 @@ export function App(): JSX.Element {
         <Skills />
         <Licence />
         <DesignPicture />
-        <Certificates />
+        <Language />
         <DownloadSection onEmailCopied={showEmailCopiedToast} />
         <Contact onEmailCopied={showEmailCopiedToast} />
         <HiddenGiftMessage />

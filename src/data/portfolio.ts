@@ -17,6 +17,7 @@ export const navigationItems = [
   { label: "Strength", href: "#core-strength" },
   { label: "Licence", href: "#licence" },
   { label: "Design Picture", href: "#design-picture" },
+  { label: "Language", href: "#language" },
   { label: "Contact", href: "#contact" }
 ];
 

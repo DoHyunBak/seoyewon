@@ -1,5 +1,5 @@
 import { DesignPicture } from "./components/DesignPicture";
-import { DownloadSection } from "./components/DownloadSection";
+import { ContactSection } from "./components/ContactSection";
 import { CursorWave } from "./components/CursorWave";
 import { Footer } from "./components/Footer";
 import { Hero } from "./components/Hero";
@@ -22,7 +22,7 @@ export function App(): JSX.Element {
         <Licence />
         <DesignPicture />
         <Language />
-        <DownloadSection />
+        <ContactSection />
         <HiddenGiftMessage />
       </main>
       <Footer />

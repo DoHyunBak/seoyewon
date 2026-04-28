@@ -6,6 +6,8 @@ export const portfolioOwner = {
   role: "Process & Operations Focus",
   headline: "",
   email: "email@example.com",
+  instagramHandle: "@seoyewon",
+  instagramUrl: "https://www.instagram.com/seoyewon/",
   pdfUrl: "/portfolio.pdf",
   birth: "2004년생",
   education: "한양대학교 디자인대학 주얼리패션디자인학과 미술학사"
@@ -15,7 +17,8 @@ export const navigationItems = [
   { label: "Profile", href: "#profile" },
   { label: "Certifications", href: "#licence" },
   { label: "Design Picture", href: "#design-picture" },
-  { label: "Language", href: "#language" }
+  { label: "Language", href: "#language" },
+  { label: "Contact", href: "#contact" }
 ];
 
 export const heroKeywords = [

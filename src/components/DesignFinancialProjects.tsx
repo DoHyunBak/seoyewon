@@ -34,7 +34,7 @@ function ProjectDashboardMini(): JSX.Element {
 
   return (
     <div className="mt-6 grid gap-5 xl:grid-cols-[1.25fr_0.75fr]">
-      <div className="rounded-md border border-border bg-[#FBFAF8] p-4">
+      <div className="inner-white-panel p-4">
         <div className="mb-4 flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="text-sm font-bold text-navy">Monthly Revenue / Expense</p>
@@ -54,7 +54,7 @@ function ProjectDashboardMini(): JSX.Element {
         </div>
       </div>
 
-      <div className="rounded-md border border-border bg-white p-4">
+      <div className="inner-white-panel p-4">
         <p className="text-sm font-bold text-navy">Project Cost Summary</p>
         <ul className="mt-5 space-y-3">
           {projectCostSummary.map((item) => (
@@ -135,7 +135,7 @@ function ProjectDetailModal({ project, onClose }: ProjectDetailModalProps): JSX.
       >
         <button
           aria-label="Close project detail"
-          className="absolute right-4 top-4 inline-flex size-10 items-center justify-center rounded-full border border-border bg-white text-muted outline-none transition hover:text-navy focus-visible:ring-4 focus-visible:ring-pink/40"
+          className="absolute right-4 top-4 inline-flex size-10 items-center justify-center rounded-full border border-white/70 bg-white/45 text-muted outline-none backdrop-blur-sm transition hover:text-navy focus-visible:ring-4 focus-visible:ring-pink/40"
           ref={closeButtonRef}
           type="button"
           onClick={onClose}
@@ -160,7 +160,7 @@ function ProjectDetailModal({ project, onClose }: ProjectDetailModalProps): JSX.
 
         <div className="mt-7 grid gap-3 sm:grid-cols-3">
           {project.kpis.map((kpi) => (
-            <div className="rounded-md border border-border bg-white/75 p-4" key={kpi.label}>
+            <div className="inner-white-panel p-4" key={kpi.label}>
               <p className="text-xs font-bold uppercase tracking-[0.12em] text-muted">{kpi.label}</p>
               <p className="number mt-3 break-words text-2xl font-bold text-navy">{kpi.value}</p>
             </div>
@@ -170,11 +170,11 @@ function ProjectDetailModal({ project, onClose }: ProjectDetailModalProps): JSX.
         {project.evidenceRows ? <EvidenceTable rows={project.evidenceRows} /> : null}
 
         {project.flowSteps ? (
-          <div className="mt-6 rounded-md border border-border bg-white/72 p-4">
+          <div className="inner-white-panel mt-6 p-4">
             <p className="mb-4 text-sm font-bold text-navy">Financial Flow Diagram</p>
             <ol className="flex flex-col gap-3 md:flex-row md:flex-wrap md:items-center">
               {project.flowSteps.map((step) => (
-                <li className="inline-flex min-h-10 items-center rounded-full border border-border bg-white px-4 text-sm font-semibold text-navy" key={step}>
+                <li className="inline-flex min-h-10 items-center rounded-full border border-white/70 bg-white/45 px-4 text-sm font-semibold text-navy backdrop-blur-sm" key={step}>
                   {step}
                 </li>
               ))}

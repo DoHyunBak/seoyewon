@@ -10,33 +10,6 @@ type CertificationTableProps = {
   rows: CertificationRow[];
 };
 
-function CertificationTable({ rows }: CertificationTableProps): JSX.Element {
-  return (
-    <div className="card mt-5 overflow-x-auto">
-      <table className="w-full min-w-[720px] text-left text-sm">
-        <thead className="bg-[#F8F4EE] text-xs uppercase text-muted">
-          <tr>
-            <th className="px-4 py-3 font-bold" scope="col">구분</th>
-            <th className="px-4 py-3 font-bold" scope="col">자격/역량</th>
-            <th className="px-4 py-3 font-bold" scope="col">상태</th>
-            <th className="px-4 py-3 font-bold" scope="col">직무 연결</th>
-          </tr>
-        </thead>
-        <tbody className="divide-y divide-border bg-white">
-          {rows.map((row) => (
-            <tr key={`${row.category}-${row.name}`}>
-              <td className="px-4 py-4 text-muted">{row.category}</td>
-              <th className="px-4 py-4 font-semibold text-navy" scope="row">{row.name}</th>
-              <td className="px-4 py-4 text-muted">{row.status}</td>
-              <td className="px-4 py-4 text-text">{row.connection}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  );
-}
-
 function CertificationCardGrid({ rows }: CertificationTableProps): JSX.Element {
   const categoryColor = {
     Accounting: "from-[#1F2A44] to-[#596476]",
@@ -48,7 +21,7 @@ function CertificationCardGrid({ rows }: CertificationTableProps): JSX.Element {
       {rows.map((row) => (
         <div
           key={`${row.category}-${row.name}`}
-          className="card p-5 sm:p-6"
+          className="inner-white-panel p-5 sm:p-6"
         >
           <div className="mb-4 flex items-start justify-between gap-3">
             <div>
@@ -60,13 +33,9 @@ function CertificationCardGrid({ rows }: CertificationTableProps): JSX.Element {
             </span>
           </div>
           <div className="space-y-3">
-            <div className="rounded-md bg-white/30 px-3 py-2 backdrop-blur-sm">
-              <p className="text-xs font-semibold uppercase tracking-[0.08em] text-muted">상태</p>
-              <p className="mt-1 text-sm font-bold text-navy">{row.status}</p>
-            </div>
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.08em] text-muted">직무 연결</p>
-              <p className="mt-1 text-sm leading-5 text-text">{row.connection}</p>
+            <div className="rounded-md border border-border/50 bg-[#FAF7F2]/35 px-3 py-3">
+              <p className="text-xs font-bold uppercase tracking-[0.08em] text-green">직무 연결</p>
+              <p className="mt-1.5 text-base font-semibold leading-6 text-navy">{row.connection}</p>
             </div>
           </div>
         </div>

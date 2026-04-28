@@ -1,14 +1,18 @@
-import { navigationItems, portfolioOwner } from "../data/portfolio";
+import { navigationItems } from "../data/portfolio";
 
 export function Navigation(): JSX.Element {
   return (
-    <header className="card gradient-border-card ios-nav sticky top-0 z-50 rounded-none">
+    <header className="ios-nav fixed inset-x-0 top-0 z-50">
       <div className="section-shell flex min-h-16 flex-col justify-center gap-3 py-3 sm:flex-row sm:items-center sm:justify-between">
-        <a className="text-sm font-bold text-navy outline-none focus-visible:ring-4 focus-visible:ring-pink/40" href="#hero">
-          {portfolioOwner.name}
+        <a
+          aria-label="Go to home"
+          className="nav-wordmark shrink-0 rounded-md outline-none focus-visible:ring-4 focus-visible:ring-pink/40"
+          href="#hero"
+        >
+          SEOYEWON
         </a>
         <nav
-          aria-label="주요 섹션 이동"
+          aria-label="Primary navigation"
           className="grid w-full max-w-[calc(100vw-40px)] grid-cols-3 gap-1.5 sm:flex sm:w-auto sm:max-w-none sm:flex-wrap sm:justify-end sm:gap-2"
         >
           {navigationItems.map((item) => (

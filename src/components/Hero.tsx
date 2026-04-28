@@ -13,8 +13,7 @@ export function Hero(): JSX.Element {
         animate={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
         transition={{ duration: 0.3, ease: "easeOut" }}
       >
-        <h1 className="masked-text-reveal max-w-4xl text-[2.25rem] font-bold leading-[1.18] text-navy [overflow-wrap:anywhere] sm:text-[3rem] lg:text-[3.5rem]">
-          <span className="block">Design Financial Operations Assistant</span>
+<h1 className="masked-text-reveal max-w-5xl text-[3rem] font-bold leading-[1.15] text-navy [overflow-wrap:anywhere] sm:text-[4rem] lg:text-[4.75rem]">          <span className="block">Portfolio</span>
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-8 text-muted [overflow-wrap:anywhere]">
           <span className="block">{portfolioOwner.role}</span>

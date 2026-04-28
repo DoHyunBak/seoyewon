@@ -18,9 +18,12 @@ export function Profile(): JSX.Element {
       >
         <dl className="grid gap-3 sm:grid-cols-2">
           {profileFacts.map((fact) => (
-            <div className="grid gap-1" key={fact.label}>
-              <dt className="text-xs font-bold uppercase tracking-[0.12em] text-muted">{fact.label}</dt>
-              <dd className="break-words text-sm font-semibold leading-6 text-navy">{fact.value}</dd>
+            <div
+              className="inner-white-panel px-4 py-4 sm:px-5"
+              key={fact.label}
+            >
+              <dt className="text-xs font-bold uppercase tracking-[0.12em] text-green">{fact.label}</dt>
+              <dd className="mt-2 break-words text-base font-bold leading-7 text-navy">{fact.value}</dd>
             </div>
           ))}
         </dl>

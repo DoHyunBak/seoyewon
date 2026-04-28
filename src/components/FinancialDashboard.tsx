@@ -166,7 +166,7 @@ export function FinancialDashboard(): JSX.Element {
 
         <article className="card reveal gradient-border-card p-5 sm:p-6">
           <h3 className="text-xl font-bold text-navy">Recent Settlement Table</h3>
-          <div className="mt-5 overflow-x-auto rounded-md border border-border">
+          <div className="inner-white-panel mt-5 overflow-x-auto">
             <table className="w-full min-w-[560px] text-left text-sm">
               <caption className="sr-only">최근 정산 항목과 상태</caption>
               <thead className="bg-[#F8F4EE] text-xs uppercase text-muted">
@@ -185,7 +185,7 @@ export function FinancialDashboard(): JSX.Element {
                   </th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-border bg-white">
+              <tbody className="divide-y divide-border bg-white/20">
                 {recentSettlements.map((settlement) => (
                   <tr key={`${settlement.project}-${settlement.item}`}>
                     <th className="px-4 py-4 font-semibold text-navy" scope="row">

@@ -3,7 +3,7 @@ import type { LucideIcon } from "lucide-react";
 
 export const portfolioOwner = {
   name: "서예원",
-  role: "Process & Operations Focus",
+  role: "Process-Oriented Design Financial Operations",
   headline: "",
   email: "email@example.com",
   instagramHandle: "@seoyewon",
@@ -15,6 +15,7 @@ export const portfolioOwner = {
 
 export const navigationItems = [
   { label: "Profile", href: "#profile" },
+  { label: "Skills", href: "#skills" },
   { label: "Certifications", href: "#licence" },
   { label: "Design Picture", href: "#design-picture" },
   { label: "Language", href: "#language" },
@@ -34,6 +35,7 @@ export const heroKeywords = [
 ];
 
 export const profileFacts = [
+  { label: "이름", value: portfolioOwner.name },
   { label: "출생연도", value: portfolioOwner.birth },
   { label: "학력", value: portfolioOwner.education },
   { label: "희망 직무", value: "전산회계·세무 / Design Financial Operations" },
@@ -79,7 +81,6 @@ export type ToolRow = {
 export type CertificationRow = {
   category: string;
   name: string;
-  status: string;
   connection: string;
 };
 
@@ -149,25 +150,17 @@ export const designToolNote =
 export const certificationIntro = "보유 자격증과 전산회계·세무 관련 준비 항목을 구분하여 정리했습니다.";
 
 export const ownedCertifications: CertificationRow[] = [
-  { category: "Office", name: "컴퓨터활용능력 2급", status: "보유", connection: "Excel 기반 데이터 정리 및 문서 처리" },
-  { category: "Design", name: "GTQ 일러스트", status: "보유", connection: "디자인 자료 및 시각 자료 이해" },
-  { category: "Design", name: "포토샵", status: "보유", connection: "이미지 편집 및 디자인 산출물 이해" },
-  { category: "Design", name: "인디자인 1급", status: "보유", connection: "편집 디자인 및 문서 레이아웃 이해" }
+  { category: "Office", name: "컴퓨터활용능력 2급", connection: "Excel 기반 데이터 정리 및 문서 처리" },
+  { category: "Design", name: "GTQ 일러스트", connection: "디자인 자료 및 시각 자료 이해" },
+  { category: "Design", name: "포토샵", connection: "이미지 편집 및 디자인 산출물 이해" },
+  { category: "Design", name: "인디자인 1급", connection: "편집 디자인 및 문서 레이아웃 이해" }
 ];
 
 export const plannedCertifications: CertificationRow[] = [
-  { category: "Accounting", name: "전산회계 1급", status: "상태 입력", connection: "회계 기초, 전표 처리, 장부 흐름 이해" },
-  { category: "Tax", name: "전산세무 2급", status: "상태 입력", connection: "부가세, 원천세, 세무 기초 이해" },
-  { category: "Accounting", name: "FAT 1급", status: "상태 입력", connection: "회계 정보 처리 및 실무 기초" },
-  { category: "Tax", name: "TAT 2급", status: "상태 입력", connection: "세무 정보 처리 및 신고 흐름 이해" }
-];
-
-export const certificationStatusRules = [
-  "이미 취득한 자격증: 보유",
-  "공부 중인 자격증: 학습 중",
-  "시험 준비 중인 자격증: 준비 중",
-  "취득 계획이 있는 자격증: 취득 예정",
-  "아직 확정되지 않은 항목: 상태 입력"
+  { category: "Accounting", name: "전산회계 1급", connection: "회계 기초, 전표 처리, 장부 흐름 이해" },
+  { category: "Tax", name: "전산세무 2급", connection: "부가세, 원천세, 세무 기초 이해" },
+  { category: "Accounting", name: "FAT 1급", connection: "회계 정보 처리 및 실무 기초" },
+  { category: "Tax", name: "TAT 2급", connection: "세무 정보 처리 및 신고 흐름 이해" }
 ];
 
 export const designIndustryIntro =
@@ -194,22 +187,22 @@ export type SkillGroup = {
 
 export const skillGroups: SkillGroup[] = [
   {
-    title: "Accounting Learning",
+    title: "회계·세무 학습",
     icon: ClipboardCheck,
     skills: ["전표 처리", "매출·매입 구분", "계정과목 분류", "증빙 관리", "부가가치세", "원천세"]
   },
   {
-    title: "Excel Data Handling",
+    title: "Excel 데이터 정리",
     icon: TrendingUp,
     skills: ["Excel", "VLOOKUP", "Pivot Table", "데이터 정리", "월간 리포트", "금액 데이터", "거래처별 데이터"]
   },
   {
-    title: "Data / Office Tools",
+    title: "업무 도구",
     icon: FileSpreadsheet,
     skills: ["Excel", "Google Sheets", "Notion", "PDF Report", "ERP"]
   },
   {
-    title: "Design Tools",
+    title: "디자인 툴 이해",
     icon: ClipboardCheck,
     skills: ["Figma", "Rhino", "3D CAD", "Fusion 360", "Photoshop", "Illustrator", "InDesign"]
   }

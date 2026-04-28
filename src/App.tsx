@@ -3,11 +3,11 @@ import { ContactSection } from "./components/ContactSection";
 import { CursorWave } from "./components/CursorWave";
 import { Footer } from "./components/Footer";
 import { Hero } from "./components/Hero";
-import { HiddenGiftMessage } from "./components/HiddenGiftMessage";
 import { Language } from "./components/Language";
 import { Licence } from "./components/Licence";
 import { Navigation } from "./components/Navigation";
 import { Profile } from "./components/Profile";
+import { ScrollToTopButton } from "./components/ScrollToTopButton";
 import { Skills } from "./components/Skills";
 
 export function App(): JSX.Element {
@@ -15,7 +15,7 @@ export function App(): JSX.Element {
     <>
       <CursorWave />
       <Navigation />
-      <main>
+      <main className="pt-[118px] sm:pt-20">
         <Hero />
         <Profile />
         <Skills />
@@ -23,8 +23,8 @@ export function App(): JSX.Element {
         <DesignPicture />
         <Language />
         <ContactSection />
-        <HiddenGiftMessage />
       </main>
+      <ScrollToTopButton />
       <Footer />
     </>
   );

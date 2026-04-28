@@ -32,7 +32,7 @@ export function ContactSection(): JSX.Element {
 
             return (
               <a
-                className="group flex min-h-[150px] flex-col justify-between rounded-md border border-white/70 bg-white/45 p-5 outline-none transition hover:-translate-y-1 hover:border-pink hover:bg-white/70 focus-visible:ring-4 focus-visible:ring-pink/40 sm:p-6"
+                className="group inner-white-panel inner-white-panel-interactive flex min-h-[150px] flex-col justify-between p-5 outline-none hover:-translate-y-1 focus-visible:ring-4 focus-visible:ring-pink/40 sm:p-6"
                 href={item.href}
                 key={item.label}
                 rel={item.external ? "noreferrer" : undefined}
@@ -42,7 +42,7 @@ export function ContactSection(): JSX.Element {
                   <span className="inline-flex size-12 items-center justify-center rounded-full bg-[#F8F4EE] text-green transition group-hover:bg-pink/50 group-hover:text-navy">
                     <Icon aria-hidden="true" size={22} />
                   </span>
-                  <span className="inline-flex items-center gap-1 rounded-full border border-border bg-white px-3 py-1 text-xs font-bold text-muted">
+                  <span className="inline-flex items-center gap-1 rounded-full border border-white/70 bg-white/45 px-3 py-1 text-xs font-bold text-muted backdrop-blur-sm">
                     {item.action}
                     <ExternalLink aria-hidden="true" size={13} />
                   </span>

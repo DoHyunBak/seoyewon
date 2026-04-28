@@ -9,7 +9,7 @@ export type LanguageItem = {
 export const languageItems: LanguageItem[] = [
   {
     id: "korean",
-    name: "Korean",
+    name: "한국어",
     level: "Native"
   },
   {
@@ -19,7 +19,7 @@ export const languageItems: LanguageItem[] = [
   },
   {
     id: "japanese",
-    name: "Japanese",
+    name: "日本語",
     level: "Basic"
   }
 ];

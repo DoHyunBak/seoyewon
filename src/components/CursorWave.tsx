@@ -20,8 +20,6 @@ export function CursorWave(): JSX.Element {
     targetY: 0,
     coreX: 0,
     coreY: 0,
-    ringX: 0,
-    ringY: 0,
     initialized: false,
     trail: Array.from({ length: TRAIL_DOT_COUNT }, () => ({ x: 0, y: 0 }))
   });
@@ -64,8 +62,6 @@ export function CursorWave(): JSX.Element {
       state.targetY = y;
       state.coreX = x;
       state.coreY = y;
-      state.ringX = x;
-      state.ringY = y;
       state.initialized = true;
       state.trail.forEach((point) => {
         point.x = x;
@@ -89,12 +85,10 @@ export function CursorWave(): JSX.Element {
       if (state.initialized) {
         state.coreX += (state.targetX - state.coreX) * 0.48;
         state.coreY += (state.targetY - state.coreY) * 0.48;
-        state.ringX += (state.targetX - state.ringX) * 0.16;
-        state.ringY += (state.targetY - state.ringY) * 0.16;
 
         setElementPosition(cursor, { x: state.coreX, y: state.coreY });
-        setElementPosition(ring, { x: state.ringX, y: state.ringY });
-        setElementPosition(aura, { x: state.ringX, y: state.ringY });
+        setElementPosition(ring, { x: state.coreX, y: state.coreY });
+        setElementPosition(aura, { x: state.coreX, y: state.coreY });
 
         trailRefs.current.forEach((dot, index) => {
           if (!dot) return;

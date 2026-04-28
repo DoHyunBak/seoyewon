@@ -42,7 +42,7 @@ export function CopyEmailButton({
   };
 
   return (
-    <button className={`btn ${variantClass[variant]}`} type="button" onClick={copyEmail}>
+    <button className={`card btn ${variantClass[variant]}`} type="button" onClick={copyEmail}>
       <ClipboardCopy aria-hidden="true" size={18} />
       <span>{label}</span>
     </button>

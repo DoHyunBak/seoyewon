@@ -7,8 +7,8 @@ type EvidenceTableProps = {
 
 export function EvidenceTable({ rows }: EvidenceTableProps): JSX.Element {
   return (
-    <div className="mt-6 overflow-x-auto rounded-md border border-border" aria-label="프로젝트 증빙 정리표">
-      <table className="w-full min-w-[620px] border-collapse bg-white text-left text-sm">
+    <div className="card gradient-border-card mt-6 overflow-x-auto" aria-label="프로젝트 증빙 정리표">
+      <table className="w-full min-w-[620px] border-collapse text-left text-sm">
         <caption className="sr-only">프로젝트별 비용 항목, 금액, 증빙 유형, 처리 상태</caption>
         <thead className="bg-[#F8F4EE] text-xs uppercase text-muted">
           <tr>

@@ -1,10 +1,10 @@
-import { BarChart3, BriefcaseBusiness, ClipboardCheck, FileSpreadsheet, ReceiptText, TrendingUp } from "lucide-react";
+import { BriefcaseBusiness, ClipboardCheck, FileSpreadsheet, ReceiptText, TrendingUp } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 export const portfolioOwner = {
   name: "서예원",
-  role: "Design Financial Operations Assistant",
-  headline: "디자인 감각과 비용 정리 감각을 함께 키워가는 지원자",
+  role: "Process & Operations Focus",
+  headline: "",
   email: "email@example.com",
   pdfUrl: "/portfolio.pdf",
   birth: "2004년생",
@@ -13,114 +13,175 @@ export const portfolioOwner = {
 
 export const navigationItems = [
   { label: "Profile", href: "#profile" },
-  { label: "Strength", href: "#core-strength" },
-  { label: "Licence", href: "#licence" },
+  { label: "Certifications", href: "#licence" },
   { label: "Design Picture", href: "#design-picture" },
-  { label: "Language", href: "#language" },
-  { label: "Contact", href: "#contact" }
+  { label: "Language", href: "#language" }
 ];
 
 export const heroKeywords = [
-  "Design",
-  "Financial",
-  "Operations",
-  "Project Cost",
-  "Settlement",
-  "Report",
+  "Accounting",
+  "Tax",
+  "Excel",
+  "VLOOKUP",
+  "Pivot Table",
   "Evidence",
-  "Revenue",
-  "Expense"
-];
-
-export const profileHighlights = [
-  "주얼리·패션 디자인을 전공하며 디자인 결과물뿐 아니라 제작 과정, 재료, 비용 구조에도 관심을 두고 있습니다.",
-  "회계와 세무 기본기를 디자인 업계의 라이선스 비용, 제작비, 증빙 정리 흐름과 연결해 학습하고 있습니다.",
-  "경력처럼 과장하기보다 학력, 학습 중인 역량, 정리 가능한 업무 범위를 차분하게 보여주는 포트폴리오입니다."
+  "VAT",
+  "Withholding Tax",
+  "Design Cost"
 ];
 
 export const profileFacts = [
   { label: "출생연도", value: portfolioOwner.birth },
   { label: "학력", value: portfolioOwner.education },
-  { label: "희망 직무", value: "Design Finance / Creative Business Financial Support" },
-  { label: "핵심 방향", value: "라이선스 비용, 제작비, 증빙, 정산 자료 정리" },
+  { label: "희망 직무", value: "전산회계·세무 / Design Financial Operations" },
   { label: "연락처", value: portfolioOwner.email },
   { label: "자료", value: "PDF Portfolio" }
-];
-
-export const licenceGroups = [
-  {
-    title: "Design",
-    items: ["GTQ 그래픽기술자격", "컴퓨터그래픽스운용기능사", "컬러리스트산업기사", "Adobe Certified Professional"]
-  },
-  {
-    title: "Accounting",
-    items: ["전산회계 1급", "전산세무 2급", "FAT 1급", "TAT 2급"]
-  }
 ];
 
 export const designPictures = [
   {
     title: "Jewelry Design",
     category: "Portfolio Image 01",
-    description: "주얼리 디자인 작업 이미지를 배치할 수 있는 영역입니다.",
+    imageUrl: "/images/jewelry-design.png",
     tone: "navy"
   },
   {
     title: "Fashion Detail",
     category: "Portfolio Image 02",
-    description: "패션 소재, 디테일, 스타일링 이미지를 배치할 수 있는 영역입니다.",
+    imageUrl: "/images/fashion-detail.png",
     tone: "green"
   },
   {
     title: "Mood Board",
     category: "Portfolio Image 03",
-    description: "컬러, 재료, 무드보드 이미지를 배치할 수 있는 영역입니다.",
+    imageUrl: "/images/mood-board.png",
     tone: "pink"
   }
 ];
 
-export type Strength = {
-  title: string;
+
+
+export type CompetencyRow = {
+  competency: string;
+  status: string;
   description: string;
-  icon: LucideIcon;
-  points: string[];
 };
 
-export const coreStrengths: Strength[] = [
-  {
-    title: "Design Business Understanding",
-    description: "Creative Workflow와 프로젝트 비용 흐름을 연결해 디자인 비즈니스 구조를 파악해가고 있습니다.",
-    icon: BriefcaseBusiness,
-    points: [
-      "디자인 프로젝트 단위 매출 구조 이해",
-      "외주 디자이너 비용과 정산 흐름 이해",
-      "라이선스, 촬영, 인쇄, 제작비 비용 구조 정리",
-      "Creative Workflow와 비용 흐름 연결"
-    ]
-  },
-  {
-    title: "Financial Organization",
-    description: "증빙과 정산 항목을 항목별로 분류하며 회계 처리 전 단계의 정리 방식을 익히고 있습니다.",
-    icon: ReceiptText,
-    points: [
-      "세금계산서, 카드전표, 현금영수증 정리",
-      "외주비 정산 및 지급 예정일 관리",
-      "프로젝트별 비용 분류",
-      "증빙 관리와 부가세 흐름 점검"
-    ]
-  },
-  {
-    title: "Report & Data Readability",
-    description: "Financial Data를 표와 요약 자료로 읽기 쉽게 정리하는 방향을 학습하고 있습니다.",
-    icon: BarChart3,
-    points: [
-      "월간 매출·비용 리포트",
-      "프로젝트별 수익률 정리",
-      "KPI 기반 요약",
-      "표, 차트, 숫자 가독성 개선"
-    ]
-  }
+export type ToolRow = {
+  tool: string;
+  status: string;
+  description: string;
+};
+
+export type CertificationRow = {
+  category: string;
+  name: string;
+  status: string;
+  connection: string;
+};
+
+export type IndustryInsightRow = {
+  topic: string;
+  description: string;
+};
+
+export const specIntro =
+  "전산회계·세무 직무에 필요한 회계 기초, 세무 흐름, Excel 데이터 정리 역량을 중심으로 준비하고 있습니다. 기존 디자인 툴 경험은 디자인 업계의 프로젝트 비용과 외주 정산 흐름을 이해하는 기반으로 연결됩니다.";
+
+export const accountingLearningIntro =
+  "전산회계·세무 직무 전환을 위해 회계 기초와 세무 흐름을 학습하고 있습니다. 특히 거래 내역을 정확하게 분류하고, 증빙 자료를 체계적으로 정리하는 역량을 중심으로 준비하고 있습니다.";
+
+export const accountingLearningRows: CompetencyRow[] = [
+  { competency: "전표 처리", status: "학습 중", description: "거래 내역을 회계 항목에 맞게 정리하는 기초 역량" },
+  { competency: "매출/매입 구분", status: "학습 중", description: "수입과 지출 흐름을 구분하고 정리하는 역량" },
+  { competency: "계정과목 분류", status: "학습 중", description: "비용, 수익, 자산, 부채 항목을 구분하는 기초 역량" },
+  { competency: "증빙 관리", status: "학습 중", description: "세금계산서, 카드전표, 현금영수증을 구분하고 정리하는 역량" },
+  { competency: "부가가치세 기초", status: "학습 중", description: "매출세액과 매입세액의 흐름을 이해하는 역량" },
+  { competency: "원천세 기초", status: "학습 중", description: "외주비, 인건비 지급 시 발생하는 원천세 흐름 이해" },
+  { competency: "월간 회계 데이터 정리", status: "학습 중", description: "월별 매출, 비용, 미수금 데이터를 표로 정리하는 역량" }
 ];
+
+export const excelDataIntro =
+  "기존 데이터 분석 경험을 바탕으로 회계·세무 직무에 필요한 금액, 날짜, 거래처, 증빙 데이터를 정리할 수 있습니다.";
+
+export const excelDataRows: CompetencyRow[] = [
+  { competency: "Excel", status: "활용 가능", description: "표 기반 데이터 정리 및 리포트 작성" },
+  { competency: "VLOOKUP", status: "활용 가능", description: "거래처, 항목, 금액 데이터 조회 및 연결" },
+  { competency: "Pivot Table", status: "활용 가능", description: "항목별 합계, 월별 요약, 카테고리별 데이터 분석" },
+  { competency: "데이터 정리", status: "활용 가능", description: "원자료를 기준에 맞게 분류하고 정돈" },
+  { competency: "월간 리포트 정리", status: "활용 가능", description: "매출, 비용, 증빙 데이터를 월간 단위로 요약" },
+  { competency: "금액 데이터 정리", status: "활용 가능", description: "금액, 비율, 증감률 등 숫자 데이터 정렬" },
+  { competency: "거래처별 데이터 정리", status: "활용 가능", description: "거래처별 매출·비용 내역 구분" },
+  { competency: "비용 항목 분류", status: "활용 가능", description: "외주비, 제작비, 소모품비 등 비용 항목 정리" }
+];
+
+export const excelDataHighlights = [
+  "Excel과 피벗 테이블을 활용해 데이터를 분류하고, 항목별 합계와 요약표를 구성할 수 있습니다.",
+  "전산회계·세무 직무에서 필요한 금액, 날짜, 거래처, 증빙 데이터를 정확하게 정리하는 역량을 강화하고 있습니다."
+];
+
+export const toolsIntro = "회계 데이터 정리와 디자인 업계 이해에 필요한 도구 활용 경험을 보유하고 있습니다.";
+
+export const dataOfficeTools: ToolRow[] = [
+  { tool: "Excel", status: "활용 가능", description: "데이터 정리, 함수, 피벗 테이블 활용" },
+  { tool: "Google Sheets", status: "활용 가능", description: "협업 기반 표 정리 및 데이터 관리" },
+  { tool: "Notion", status: "활용 가능", description: "자료 정리, 포트폴리오 관리" },
+  { tool: "PDF Report", status: "활용 가능", description: "정리된 내용을 문서 형태로 구성" },
+  { tool: "ERP", status: "업무 흐름 이해", description: "ERP 기반 데이터 입력·조회 구조 이해" }
+];
+
+export const designTools: ToolRow[] = [
+  { tool: "Figma", status: "활용 가능", description: "화면 구성 및 디자인 자료 이해" },
+  { tool: "Rhino", status: "활용 가능", description: "3D 디자인 작업 흐름 이해" },
+  { tool: "3D CAD", status: "활용 가능", description: "제품·디자인 구조 이해" },
+  { tool: "Fusion 360", status: "활용 가능", description: "3D 모델링 및 제작 프로세스 이해" },
+  { tool: "Adobe Photoshop", status: "활용 가능", description: "이미지 편집 및 디자인 산출물 이해" },
+  { tool: "Adobe Illustrator", status: "활용 가능", description: "벡터 그래픽 및 디자인 자료 이해" },
+  { tool: "Adobe InDesign", status: "활용 가능", description: "편집 디자인 및 문서 레이아웃 이해" }
+];
+
+export const designToolNote =
+  "디자인 툴 경험은 회계 역량 자체가 아니라, 디자인 회사의 업무 흐름과 프로젝트 구조를 이해하는 보조 역량으로 활용됩니다.";
+
+export const certificationIntro = "보유 자격증과 전산회계·세무 관련 준비 항목을 구분하여 정리했습니다.";
+
+export const ownedCertifications: CertificationRow[] = [
+  { category: "Office", name: "컴퓨터활용능력 2급", status: "보유", connection: "Excel 기반 데이터 정리 및 문서 처리" },
+  { category: "Design", name: "GTQ 일러스트", status: "보유", connection: "디자인 자료 및 시각 자료 이해" },
+  { category: "Design", name: "포토샵", status: "보유", connection: "이미지 편집 및 디자인 산출물 이해" },
+  { category: "Design", name: "인디자인 1급", status: "보유", connection: "편집 디자인 및 문서 레이아웃 이해" }
+];
+
+export const plannedCertifications: CertificationRow[] = [
+  { category: "Accounting", name: "전산회계 1급", status: "상태 입력", connection: "회계 기초, 전표 처리, 장부 흐름 이해" },
+  { category: "Tax", name: "전산세무 2급", status: "상태 입력", connection: "부가세, 원천세, 세무 기초 이해" },
+  { category: "Accounting", name: "FAT 1급", status: "상태 입력", connection: "회계 정보 처리 및 실무 기초" },
+  { category: "Tax", name: "TAT 2급", status: "상태 입력", connection: "세무 정보 처리 및 신고 흐름 이해" }
+];
+
+export const certificationStatusRules = [
+  "이미 취득한 자격증: 보유",
+  "공부 중인 자격증: 학습 중",
+  "시험 준비 중인 자격증: 준비 중",
+  "취득 계획이 있는 자격증: 취득 예정",
+  "아직 확정되지 않은 항목: 상태 입력"
+];
+
+export const designIndustryIntro =
+  "디자인 전공과 디자인 툴 경험을 바탕으로 디자인 회사의 프로젝트 비용 구조를 이해할 수 있습니다. 이는 전산회계·세무 직무에서 외주비, 제작비, 소재비, 라이선스 비용 등을 정리하는 데 연결될 수 있습니다.";
+
+export const designIndustryRows: IndustryInsightRow[] = [
+  { topic: "디자인 프로젝트 흐름 이해", description: "기획, 제작, 산출물 관리까지 이어지는 프로젝트 구조 이해" },
+  { topic: "외주 디자이너 정산 이해", description: "외주 작업, 검수, 지급, 증빙 흐름 이해" },
+  { topic: "제작비 구조 이해", description: "제품 제작, 샘플 제작, 촬영, 출력 등 비용 구조 이해" },
+  { topic: "소재비 흐름 이해", description: "원단, 부자재, 샘플 제작 관련 비용 흐름 이해" },
+  { topic: "라이선스 비용 이해", description: "폰트, 이미지, 디자인 소스 등 라이선스 비용 이해" },
+  { topic: "인쇄비/촬영비 이해", description: "포트폴리오, 룩북, 홍보물 제작 비용 구조 이해" },
+  { topic: "디자인 산출물 관리 이해", description: "이미지, 편집물, 3D 작업물 등 산출물 관리 흐름 이해" }
+];
+
+export const designIndustryNote =
+  "디자인 기반 경험을 바탕으로 디자인 회사의 프로젝트 단위 비용, 외주비, 제작비, 라이선스 비용 등 실무에서 발생하는 비용 구조를 이해할 수 있습니다.";
 
 export type SkillGroup = {
   title: string;
@@ -130,30 +191,23 @@ export type SkillGroup = {
 
 export const skillGroups: SkillGroup[] = [
   {
-    title: "Design Industry",
+    title: "Accounting Learning",
     icon: ClipboardCheck,
-    skills: [
-      "Project Cost",
-      "Outsourcing Fee",
-      "License Cost",
-      "Production Cost",
-      "Creative Workflow",
-      "Design Project Budget"
-    ]
+    skills: ["전표 처리", "매출·매입 구분", "계정과목 분류", "증빙 관리", "부가가치세", "원천세"]
   },
   {
-    title: "Financial",
+    title: "Excel Data Handling",
     icon: TrendingUp,
-    skills: ["매출 관리", "비용 관리", "정산 관리", "미수금 관리", "세금계산서", "증빙 관리", "부가세", "원천세"]
+    skills: ["Excel", "VLOOKUP", "Pivot Table", "데이터 정리", "월간 리포트", "금액 데이터", "거래처별 데이터"]
   },
   {
-    title: "Data & Report",
+    title: "Data / Office Tools",
     icon: FileSpreadsheet,
-    skills: ["Excel", "SUMIFS", "XLOOKUP", "Pivot Table", "조건부 서식", "Monthly Report", "KPI Summary", "Dashboard"]
+    skills: ["Excel", "Google Sheets", "Notion", "PDF Report", "ERP"]
   },
   {
-    title: "Tools",
+    title: "Design Tools",
     icon: ClipboardCheck,
-    skills: ["더존", "Excel", "Google Sheets", "PDF Report"]
+    skills: ["Figma", "Rhino", "3D CAD", "Fusion 360", "Photoshop", "Illustrator", "InDesign"]
   }
 ];

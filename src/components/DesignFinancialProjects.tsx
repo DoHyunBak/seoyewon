@@ -1,3 +1,6 @@
+import { useEffect, useRef, useState } from "react";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { X } from "lucide-react";
 import {
   Bar,
   BarChart,
@@ -10,7 +13,11 @@ import {
   YAxis
 } from "recharts";
 import { designFinancialProjects, projectCostSummary, projectDashboardSeries } from "../data/projects";
+import type { PortfolioProject } from "../data/projects";
 import { formatCurrency } from "../utils/format";
+import { runViewTransition } from "../utils/interaction";
+import { EvidenceTable } from "./EvidenceTable";
+import { ProcessTimeline } from "./ProcessTimeline";
 import { ProjectCard } from "./ProjectCard";
 import { SectionTitle } from "./SectionTitle";
 
@@ -23,13 +30,14 @@ function currencyTick(value: number): string {
 }
 
 function ProjectDashboardMini(): JSX.Element {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <div className="mt-6 grid gap-5 xl:grid-cols-[1.25fr_0.75fr]">
       <div className="rounded-md border border-border bg-[#FBFAF8] p-4">
         <div className="mb-4 flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="text-sm font-bold text-navy">Monthly Revenue / Expense</p>
-            <p className="text-sm text-muted">월별 매출과 비용 흐름을 함께 비교합니다.</p>
           </div>
         </div>
         <div className="chart-grow h-[250px]">
@@ -39,8 +47,8 @@ function ProjectDashboardMini(): JSX.Element {
               <XAxis dataKey="month" stroke="#6B6B6B" tickLine={false} axisLine={false} />
               <YAxis stroke="#6B6B6B" tickFormatter={currencyTick} tickLine={false} axisLine={false} width={44} />
               <Tooltip formatter={(value, name) => [formatTooltipCurrency(value), name === "revenue" ? "매출" : "비용"]} />
-              <Bar dataKey="revenue" fill="#1F2A44" radius={[8, 8, 0, 0]} />
-              <Bar dataKey="expense" fill="#3A7D5A" radius={[8, 8, 0, 0]} />
+              <Bar dataKey="revenue" fill="#1F2A44" isAnimationActive={!shouldReduceMotion} radius={[8, 8, 0, 0]} />
+              <Bar dataKey="expense" fill="#3A7D5A" isAnimationActive={!shouldReduceMotion} radius={[8, 8, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </div>
@@ -48,7 +56,6 @@ function ProjectDashboardMini(): JSX.Element {
 
       <div className="rounded-md border border-border bg-white p-4">
         <p className="text-sm font-bold text-navy">Project Cost Summary</p>
-        <p className="mt-1 text-sm text-muted">항목별 비용을 예시 금액으로 정리합니다.</p>
         <ul className="mt-5 space-y-3">
           {projectCostSummary.map((item) => (
             <li className="flex items-center justify-between gap-4 text-sm" key={item.category}>
@@ -63,7 +70,14 @@ function ProjectDashboardMini(): JSX.Element {
               <XAxis dataKey="month" stroke="#6B6B6B" tickLine={false} axisLine={false} />
               <YAxis stroke="#6B6B6B" tickLine={false} axisLine={false} />
               <Tooltip formatter={(value) => [`${value}%`, "수익률"]} />
-              <Line type="monotone" dataKey="profitRate" stroke="#3A7D5A" strokeWidth={3} dot={{ r: 4, fill: "#3A7D5A" }} />
+              <Line
+                type="monotone"
+                dataKey="profitRate"
+                stroke="#3A7D5A"
+                strokeWidth={3}
+                dot={{ r: 4, fill: "#3A7D5A" }}
+                isAnimationActive={!shouldReduceMotion}
+              />
             </LineChart>
           </ResponsiveContainer>
         </div>
@@ -72,22 +86,137 @@ function ProjectDashboardMini(): JSX.Element {
   );
 }
 
+type ProjectDetailModalProps = {
+  project: PortfolioProject;
+  onClose: () => void;
+};
+
+function ProjectDetailModal({ project, onClose }: ProjectDetailModalProps): JSX.Element {
+  const shouldReduceMotion = useReducedMotion();
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    const closeOnEscape = (event: KeyboardEvent): void => {
+      if (event.key === "Escape") {
+        onClose();
+      }
+    };
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    closeButtonRef.current?.focus();
+    window.addEventListener("keydown", closeOnEscape);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", closeOnEscape);
+    };
+  }, [onClose]);
+
+  return (
+    <motion.div
+      aria-labelledby="project-detail-title"
+      aria-modal="true"
+      className="fixed inset-0 z-50 grid place-items-center bg-navy/35 px-4 py-8 backdrop-blur-sm"
+      role="dialog"
+      initial={shouldReduceMotion ? false : { opacity: 0 }}
+      animate={shouldReduceMotion ? undefined : { opacity: 1 }}
+      exit={shouldReduceMotion ? undefined : { opacity: 0 }}
+      transition={{ duration: 0.18, ease: "easeOut" }}
+      onClick={onClose}
+    >
+      <motion.article
+        className="project-detail-panel glass-kpi relative max-h-[88vh] w-full max-w-4xl overflow-y-auto rounded-lg p-5 outline-none sm:p-7"
+        initial={shouldReduceMotion ? false : { opacity: 0, y: 18, scale: 0.98 }}
+        animate={shouldReduceMotion ? undefined : { opacity: 1, y: 0, scale: 1 }}
+        exit={shouldReduceMotion ? undefined : { opacity: 0, y: 18, scale: 0.98 }}
+        transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
+        onClick={(event) => event.stopPropagation()}
+      >
+        <button
+          aria-label="Close project detail"
+          className="absolute right-4 top-4 inline-flex size-10 items-center justify-center rounded-full border border-border bg-white text-muted outline-none transition hover:text-navy focus-visible:ring-4 focus-visible:ring-pink/40"
+          ref={closeButtonRef}
+          type="button"
+          onClick={onClose}
+        >
+          <X aria-hidden="true" size={18} />
+        </button>
+
+        <div className="pr-12">
+          <p className="mb-3 text-sm font-bold uppercase tracking-[0.16em] text-green">Project Detail</p>
+          <h3 className="masked-text-reveal text-2xl font-bold leading-tight text-navy sm:text-3xl" id="project-detail-title">
+            {project.title}
+          </h3>
+        </div>
+
+        <div className="mt-5 flex flex-wrap gap-2">
+          {project.tags.map((tag) => (
+            <span className="tag" key={tag}>
+              {tag}
+            </span>
+          ))}
+        </div>
+
+        <div className="mt-7 grid gap-3 sm:grid-cols-3">
+          {project.kpis.map((kpi) => (
+            <div className="rounded-md border border-border bg-white/75 p-4" key={kpi.label}>
+              <p className="text-xs font-bold uppercase tracking-[0.12em] text-muted">{kpi.label}</p>
+              <p className="number mt-3 break-words text-2xl font-bold text-navy">{kpi.value}</p>
+            </div>
+          ))}
+        </div>
+
+        {project.evidenceRows ? <EvidenceTable rows={project.evidenceRows} /> : null}
+
+        {project.flowSteps ? (
+          <div className="mt-6 rounded-md border border-border bg-white/72 p-4">
+            <p className="mb-4 text-sm font-bold text-navy">Financial Flow Diagram</p>
+            <ol className="flex flex-col gap-3 md:flex-row md:flex-wrap md:items-center">
+              {project.flowSteps.map((step) => (
+                <li className="inline-flex min-h-10 items-center rounded-full border border-border bg-white px-4 text-sm font-semibold text-navy" key={step}>
+                  {step}
+                </li>
+              ))}
+            </ol>
+          </div>
+        ) : null}
+
+        {project.processSteps ? <ProcessTimeline steps={project.processSteps} /> : null}
+      </motion.article>
+    </motion.div>
+  );
+}
+
 export function DesignFinancialProjects(): JSX.Element {
+  const [selectedProject, setSelectedProject] = useState<PortfolioProject | null>(null);
+
+  const openProject = (project: PortfolioProject): void => {
+    runViewTransition(() => setSelectedProject(project));
+  };
+
+  const closeProject = (): void => {
+    runViewTransition(() => setSelectedProject(null));
+  };
+
   return (
     <section className="section-shell section-spacing" id="projects">
       <SectionTitle
         eyebrow="Design Financial Projects"
         title="Three Practical Portfolio Projects"
-        description="프로젝트 수는 3개로 제한하고, 매출·비용·증빙·정산·리포트 역량이 자연스럽게 드러나도록 구성했습니다."
       />
 
       <div className="grid gap-6">
-        {designFinancialProjects.map((project) => (
-          <ProjectCard project={project} key={project.id}>
+        {designFinancialProjects.map((project, index) => (
+          <ProjectCard featured={index === 0} index={index} onOpen={() => openProject(project)} project={project} key={project.id}>
             {project.id === "monthly-dashboard" ? <ProjectDashboardMini /> : null}
           </ProjectCard>
         ))}
       </div>
+
+      <AnimatePresence>
+        {selectedProject ? <ProjectDetailModal project={selectedProject} onClose={closeProject} /> : null}
+      </AnimatePresence>
     </section>
   );
 }

@@ -12,7 +12,7 @@ export function ProcessTimeline({ steps }: ProcessTimelineProps): JSX.Element {
     <ol className="mt-6 grid gap-4" aria-label="외주 디자이너 정산 프로세스">
       {steps.map((step, index) => (
         <motion.li
-          className="relative rounded-md border border-border bg-[#FBFAF8] p-4 pl-14"
+          className="card gradient-border-card relative p-4 pl-14"
           initial={shouldReduceMotion ? false : { opacity: 0, y: 10 }}
           whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.4 }}
@@ -25,7 +25,6 @@ export function ProcessTimeline({ steps }: ProcessTimelineProps): JSX.Element {
           <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
             <div>
               <h4 className="text-base font-bold text-navy">{step.title}</h4>
-              <p className="mt-1 text-sm leading-6 text-muted">{step.description}</p>
             </div>
             <span className="status-badge self-start">{step.status}</span>
           </div>

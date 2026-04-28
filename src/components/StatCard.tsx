@@ -8,7 +8,6 @@ type StatCardProps = {
   label: string;
   value: number;
   variant?: "currency" | "number" | "percent";
-  helper: string;
   icon?: LucideIcon;
   tone?: "navy" | "green" | "pink";
 };
@@ -29,7 +28,6 @@ export function StatCard({
   label,
   value,
   variant = "number",
-  helper,
   icon: Icon,
   tone = "navy"
 }: StatCardProps): JSX.Element {
@@ -64,12 +62,11 @@ export function StatCard({
 
   return (
     <motion.article
-      className="card spotlight-card glass-kpi p-5"
+      className="card glass-kpi p-5"
       initial={shouldReduceMotion ? false : { opacity: 0, y: 14 }}
       whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.24, ease: "easeOut" }}
-      onPointerMove={updateSpotlightPosition}
     >
       <div className="mb-4 flex items-center justify-between gap-4">
         <p className="text-sm font-semibold text-muted">{label}</p>
@@ -82,7 +79,6 @@ export function StatCard({
       <p className={`number break-words text-[1.85rem] font-bold leading-none md:text-[2.35rem] ${toneClass}`}>
         {formatStat(displayValue, variant)}
       </p>
-      <p className="mt-3 text-sm leading-6 text-muted">{helper}</p>
     </motion.article>
   );
 }

@@ -1,7 +1,6 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { Image, Palette } from "lucide-react";
 import { designPictures } from "../data/portfolio";
-import { updateSpotlightPosition } from "../utils/interaction";
 import { SectionTitle } from "./SectionTitle";
 
 const toneClass = {
@@ -18,36 +17,48 @@ export function DesignPicture(): JSX.Element {
       <SectionTitle
         eyebrow="Design Picture"
         title="Design Picture Gallery"
-        description="주얼리·패션 디자인 전공의 시각 자료를 배치해, 숫자 정리 역량만 앞서 보이지 않도록 균형을 맞춥니다."
       />
 
-      <div className="grid gap-5 md:grid-cols-3">
-        {designPictures.map((picture, index) => (
-          <motion.article
-            className="card spotlight-card overflow-hidden"
-            initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
-            key={picture.title}
-            transition={{ duration: 0.24, delay: shouldReduceMotion ? 0 : index * 0.06, ease: "easeOut" }}
-            viewport={{ once: true, amount: 0.35 }}
-            whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
-            onPointerMove={updateSpotlightPosition}
-          >
-            <div className={`relative aspect-[4/5] bg-gradient-to-br ${toneClass[picture.tone as keyof typeof toneClass]}`}>
-              <div className="absolute inset-5 rounded-md border border-white/55 bg-white/18" aria-hidden="true" />
-              <div className="absolute bottom-5 left-5 right-5 rounded-md bg-white/88 p-4 backdrop-blur">
-                <p className="text-xs font-bold uppercase tracking-[0.16em] text-green">{picture.category}</p>
-                <p className="mt-2 text-xl font-bold text-navy">{picture.title}</p>
+      <motion.article
+        className="card gradient-border-card p-6 sm:p-8"
+        initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
+        transition={{ duration: 0.24, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.35 }}
+        whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
+      >
+        <div className="grid gap-5 md:grid-cols-3">
+          {designPictures.map((picture, index) => (
+            <motion.section
+              className="overflow-hidden rounded-lg"
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
+              key={picture.title}
+              transition={{ duration: 0.24, delay: shouldReduceMotion ? 0 : index * 0.06, ease: "easeOut" }}
+              viewport={{ once: true, amount: 0.35 }}
+              whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
+            >
+              <div className={`relative aspect-[4/5] bg-gradient-to-br ${toneClass[picture.tone as keyof typeof toneClass]}`}>
+                {"imageUrl" in picture ? (
+                  <img
+                    alt={`${picture.title} visual`}
+                    className="absolute inset-0 h-full w-full bg-[#F8F4EE] object-contain"
+                    loading="lazy"
+                    src={picture.imageUrl}
+                  />
+                ) : (
+                  <div className="absolute inset-5 rounded-md border border-white/55 bg-white/18" aria-hidden="true" />
+                )}
+                <div className="glass-caption absolute bottom-5 left-5 right-5 rounded-md p-4">
+                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-green">{picture.category}</p>
+                  <p className="mt-2 text-xl font-bold text-navy">{picture.title}</p>
+                </div>
+                <span className="glass-orb absolute right-5 top-5 inline-flex size-12 items-center justify-center rounded-full text-green">
+                  {index === 0 ? <Image aria-hidden="true" size={22} /> : <Palette aria-hidden="true" size={22} />}
+                </span>
               </div>
-              <span className="absolute right-5 top-5 inline-flex size-12 items-center justify-center rounded-full bg-white/85 text-green">
-                {index === 0 ? <Image aria-hidden="true" size={22} /> : <Palette aria-hidden="true" size={22} />}
-              </span>
-            </div>
-            <div className="p-5">
-              <p className="text-sm leading-6 text-muted">{picture.description}</p>
-            </div>
-          </motion.article>
-        ))}
-      </div>
+            </motion.section>
+          ))}
+        </div>
+      </motion.article>
     </section>
   );
 }

@@ -47,7 +47,7 @@ export function HiddenGiftMessage(): JSX.Element {
           <motion.div
             aria-labelledby="gift-message-title"
             aria-modal="true"
-            className="fixed inset-0 z-50 grid place-items-center bg-navy/35 px-5"
+            className="fixed inset-0 z-50 grid place-items-center bg-navy/25 px-5 backdrop-blur-md"
             role="dialog"
             initial={shouldReduceMotion ? false : { opacity: 0 }}
             animate={shouldReduceMotion ? undefined : { opacity: 1 }}
@@ -55,7 +55,7 @@ export function HiddenGiftMessage(): JSX.Element {
             transition={{ duration: 0.18, ease: "easeOut" }}
           >
             <motion.div
-              className="gift-panel soft-glow relative w-full max-w-lg rounded-lg border border-border bg-white p-6 text-left shadow-card sm:p-8"
+              className="gift-panel liquid-glass-panel soft-glow relative w-full max-w-lg rounded-lg p-6 text-left sm:p-8"
               initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
               animate={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
               exit={shouldReduceMotion ? undefined : { opacity: 0, y: 16 }}
@@ -63,7 +63,7 @@ export function HiddenGiftMessage(): JSX.Element {
             >
               <button
                 aria-label="Close message"
-                className="absolute right-4 top-4 inline-flex size-10 items-center justify-center rounded-full border border-border text-muted outline-none transition hover:text-navy focus-visible:ring-4 focus-visible:ring-pink/40"
+                className="glass-orb absolute right-4 top-4 inline-flex size-10 items-center justify-center rounded-full text-muted outline-none transition hover:text-navy focus-visible:ring-4 focus-visible:ring-pink/40"
                 type="button"
                 onClick={() => setOpenWithTransition(false)}
               >

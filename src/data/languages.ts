@@ -1,4 +1,4 @@
-export type LanguageLevel = "능통" | "중간" | "초급";
+export type LanguageLevel = "Native" | "Intermediate" | "Basic";
 
 export type LanguageItem = {
   id: string;
@@ -9,17 +9,17 @@ export type LanguageItem = {
 export const languageItems: LanguageItem[] = [
   {
     id: "korean",
-    name: "한국어",
-    level: "능통"
+    name: "Korean",
+    level: "Native"
   },
   {
     id: "english",
-    name: "영어",
-    level: "중간"
+    name: "English",
+    level: "Intermediate"
   },
   {
     id: "japanese",
-    name: "일본어",
-    level: "초급"
+    name: "Japanese",
+    level: "Basic"
   }
 ];

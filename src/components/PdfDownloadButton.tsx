@@ -12,7 +12,11 @@ export function PdfDownloadButton({
   variant = "primary"
 }: PdfDownloadButtonProps): JSX.Element {
   return (
-    <a className={`btn ${variant === "primary" ? "btn-primary" : "btn-secondary"}`} href={href} download>
+    <a
+      className={`card btn magnetic-button ${variant === "primary" ? "btn-primary" : "btn-secondary"}`}
+      href={href}
+      download
+    >
       <Download aria-hidden="true" size={18} />
       <span>{label}</span>
     </a>

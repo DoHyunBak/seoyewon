@@ -1,0 +1,17 @@
+node_modules/
+dist/
+
+*.log
+*.tsbuildinfo
+
+.env
+.env.*
+!.env.example
+
+.DS_Store
+Thumbs.db
+
+.edge-profile*/
+.chrome-profile*/
+.chrome-cdp-profile*/
+verification-*.png

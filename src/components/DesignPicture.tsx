@@ -17,7 +17,7 @@ export function DesignPicture(): JSX.Element {
       <SectionTitle eyebrow="Design Picture" title="Design Picture Gallery" />
 
       <motion.article
-        className="card gradient-border-card p-6 sm:p-8"
+        className="content-shell card gradient-border-card p-6 sm:p-8"
         initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
         transition={{ duration: 0.24, ease: "easeOut" }}
         viewport={{ once: true, amount: 0.35 }}

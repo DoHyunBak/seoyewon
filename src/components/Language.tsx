@@ -10,7 +10,7 @@ export function Language(): JSX.Element {
     <section className="section-shell section-spacing flex flex-col gap-8" id="language">
       <SectionTitle eyebrow="Language" title="Language" />
 
-      <div className="grid gap-4 md:grid-cols-3">
+      <div className="content-shell grid gap-4 md:grid-cols-3">
         {languageItems.map((item, index) => (
           <motion.article
             aria-label={`${item.name} ${item.level}`}

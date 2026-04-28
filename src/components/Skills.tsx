@@ -13,7 +13,7 @@ export function Skills(): JSX.Element {
       <SectionTitle eyebrow="Skills & Certifications" title="Professional Skills" />
 
       <motion.article
-        className="card gradient-border-card p-6 sm:p-8"
+        className="content-shell card gradient-border-card p-6 sm:p-8"
         initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
         whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.35 }}

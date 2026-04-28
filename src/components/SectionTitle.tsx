@@ -7,12 +7,12 @@ type SectionTitleProps = {
   align?: "left" | "center";
 };
 
-export function SectionTitle({ eyebrow, title, description, align = "left" }: SectionTitleProps): JSX.Element {
+export function SectionTitle({ eyebrow, title, description, align = "center" }: SectionTitleProps): JSX.Element {
   const shouldReduceMotion = useReducedMotion();
 
   return (
     <motion.div
-      className={align === "center" ? "mx-auto max-w-3xl text-center" : "max-w-3xl"}
+      className={align === "center" ? "content-shell text-center" : "content-shell"}
       initial={shouldReduceMotion ? false : { opacity: 0, y: 18 }}
       whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.4 }}

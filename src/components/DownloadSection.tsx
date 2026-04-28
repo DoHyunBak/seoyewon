@@ -7,7 +7,7 @@ export function DownloadSection(): JSX.Element {
     <section className="section-shell section-spacing flex flex-col gap-8" id="download">
       <SectionTitle eyebrow="PDF Download" title="Downloadable Portfolio Materials" />
 
-      <div className="card gradient-border-card flex flex-col gap-6 p-6 sm:p-8 lg:flex-row lg:items-center lg:justify-between">
+      <div className="content-shell card gradient-border-card flex flex-col gap-6 p-6 sm:p-8 lg:flex-row lg:items-center lg:justify-between">
         <div className="max-w-2xl">
           <p className="text-sm font-bold uppercase tracking-[0.16em] text-green">Portfolio PDF</p>
           <p className="mt-3 text-base leading-7 text-muted">

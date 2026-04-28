@@ -8,7 +8,7 @@ export function Hero(): JSX.Element {
   return (
     <section className="section-shell section-spacing hero-surface" id="hero">
       <motion.div
-        className="card gradient-border-card min-w-0 max-w-4xl p-8"
+        className="content-shell card gradient-border-card p-8"
         initial={shouldReduceMotion ? false : { opacity: 0, y: 18 }}
         animate={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
         transition={{ duration: 0.3, ease: "easeOut" }}

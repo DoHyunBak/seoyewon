@@ -1,6 +1,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { BadgeCheck, FileCheck2, ReceiptText } from "lucide-react";
 import { licenceItems } from "../data/portfolio";
+import { updateSpotlightPosition } from "../utils/interaction";
 import { SectionTitle } from "./SectionTitle";
 
 const icons = [BadgeCheck, ReceiptText, FileCheck2];
@@ -22,12 +23,13 @@ export function Licence(): JSX.Element {
 
           return (
             <motion.article
-              className="card p-6"
+              className={`card spotlight-card p-6 ${index === 0 ? "gradient-border-card" : ""}`}
               initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
               key={item.title}
               transition={{ duration: 0.24, delay: shouldReduceMotion ? 0 : index * 0.06, ease: "easeOut" }}
               viewport={{ once: true, amount: 0.35 }}
               whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
+              onPointerMove={updateSpotlightPosition}
             >
               <div className="mb-5 flex items-center justify-between gap-4">
                 <span className="inline-flex size-12 items-center justify-center rounded-full bg-[#F8F4EE] text-green">

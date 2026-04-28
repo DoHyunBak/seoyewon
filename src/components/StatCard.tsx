@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import type { LucideIcon } from "lucide-react";
 import { formatCurrency, formatNumber, formatPercent } from "../utils/format";
+import { updateSpotlightPosition } from "../utils/interaction";
 
 type StatCardProps = {
   label: string;
@@ -63,11 +64,12 @@ export function StatCard({
 
   return (
     <motion.article
-      className="card p-5"
+      className="card spotlight-card glass-kpi p-5"
       initial={shouldReduceMotion ? false : { opacity: 0, y: 14 }}
       whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.24, ease: "easeOut" }}
+      onPointerMove={updateSpotlightPosition}
     >
       <div className="mb-4 flex items-center justify-between gap-4">
         <p className="text-sm font-semibold text-muted">{label}</p>

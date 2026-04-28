@@ -111,7 +111,7 @@ export function FinancialDashboard(): JSX.Element {
               </p>
             </div>
           </div>
-          <div className="h-[320px]">
+          <div className="chart-grow h-[320px]">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={revenueExpenseData} margin={{ top: 12, right: 12, left: 0, bottom: 0 }}>
                 <CartesianGrid stroke="#E8E2DA" strokeDasharray="3 3" vertical={false} />
@@ -130,7 +130,7 @@ export function FinancialDashboard(): JSX.Element {
           <p className="mt-2 text-sm leading-6 text-muted">
             차트 요약: 외주비가 가장 큰 비용 항목이며, 제작비와 운영비가 뒤를 잇습니다.
           </p>
-          <div className="mt-4 h-[250px]">
+          <div className="chart-grow mt-4 h-[250px]">
             <ResponsiveContainer width="100%" height="100%">
               <PieChart>
                 <Pie data={costBreakdownData} dataKey="value" innerRadius={62} outerRadius={92} paddingAngle={3}>
@@ -160,7 +160,7 @@ export function FinancialDashboard(): JSX.Element {
         <article className="card p-5 sm:p-6">
           <h3 className="text-xl font-bold text-navy">Profit Rate Trend</h3>
           <p className="mt-2 text-sm leading-6 text-muted">수익률은 최근 4월 기준 42.6%로 완만하게 개선되는 예시 흐름입니다.</p>
-          <div className="mt-4 h-[250px]">
+          <div className="chart-grow mt-4 h-[250px]">
             <ResponsiveContainer width="100%" height="100%">
               <LineChart data={profitRateData} margin={{ top: 12, right: 12, left: -18, bottom: 0 }}>
                 <CartesianGrid stroke="#E8E2DA" strokeDasharray="3 3" vertical={false} />

@@ -12,7 +12,7 @@ export function SectionTitle({ eyebrow, title, description, align = "left" }: Se
 
   return (
     <motion.div
-      className={align === "center" ? "mx-auto mb-10 max-w-3xl text-center" : "mb-10 max-w-3xl"}
+      className={align === "center" ? "reveal mx-auto mb-10 max-w-3xl text-center" : "reveal mb-10 max-w-3xl"}
       initial={shouldReduceMotion ? false : { opacity: 0, y: 18 }}
       whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.4 }}

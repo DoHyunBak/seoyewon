@@ -1,5 +1,6 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { coreStrengths } from "../data/portfolio";
+import { updateSpotlightPosition } from "../utils/interaction";
 import { SectionTitle } from "./SectionTitle";
 
 export function CoreStrength(): JSX.Element {
@@ -19,11 +20,12 @@ export function CoreStrength(): JSX.Element {
 
           return (
             <motion.article
-              className="card p-6"
+              className="card spotlight-card p-6"
               initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
               whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.35 }}
               transition={{ duration: 0.24, delay: shouldReduceMotion ? 0 : index * 0.06, ease: "easeOut" }}
+              onPointerMove={updateSpotlightPosition}
               key={strength.title}
             >
               <span className="mb-5 inline-flex size-12 items-center justify-center rounded-full bg-[#F8F4EE] text-green">

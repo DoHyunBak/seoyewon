@@ -1,10 +1,24 @@
 import { useEffect, useState } from "react";
+import { flushSync } from "react-dom";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { Heart, X } from "lucide-react";
 
 export function HiddenGiftMessage(): JSX.Element {
   const [isOpen, setIsOpen] = useState(false);
   const shouldReduceMotion = useReducedMotion();
+
+  const setOpenWithTransition = (nextOpen: boolean): void => {
+    const transition = (document as Document & { startViewTransition?: (callback: () => void) => void }).startViewTransition;
+
+    if (transition) {
+      transition(() => {
+        flushSync(() => setIsOpen(nextOpen));
+      });
+      return;
+    }
+
+    setIsOpen(nextOpen);
+  };
 
   useEffect(() => {
     if (!isOpen) {
@@ -13,7 +27,7 @@ export function HiddenGiftMessage(): JSX.Element {
 
     const closeOnEscape = (event: KeyboardEvent): void => {
       if (event.key === "Escape") {
-        setIsOpen(false);
+        setOpenWithTransition(false);
       }
     };
 
@@ -23,8 +37,8 @@ export function HiddenGiftMessage(): JSX.Element {
 
   return (
     <section className="section-shell pb-10 text-center" id="gift-message">
-      <button className="btn btn-soft mx-auto" type="button" onClick={() => setIsOpen(true)}>
-        <Heart aria-hidden="true" size={17} />
+      <button className="btn btn-soft soft-glow mx-auto" type="button" onClick={() => setOpenWithTransition(true)}>
+        <Heart aria-hidden="true" className="floating-soft" size={17} />
         <span>Small Message</span>
       </button>
 
@@ -41,7 +55,7 @@ export function HiddenGiftMessage(): JSX.Element {
             transition={{ duration: 0.18, ease: "easeOut" }}
           >
             <motion.div
-              className="relative w-full max-w-lg rounded-lg border border-border bg-white p-6 text-left shadow-card sm:p-8"
+              className="gift-panel soft-glow relative w-full max-w-lg rounded-lg border border-border bg-white p-6 text-left shadow-card sm:p-8"
               initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
               animate={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
               exit={shouldReduceMotion ? undefined : { opacity: 0, y: 16 }}
@@ -51,14 +65,14 @@ export function HiddenGiftMessage(): JSX.Element {
                 aria-label="Close message"
                 className="absolute right-4 top-4 inline-flex size-10 items-center justify-center rounded-full border border-border text-muted outline-none transition hover:text-navy focus-visible:ring-4 focus-visible:ring-pink/40"
                 type="button"
-                onClick={() => setIsOpen(false)}
+                onClick={() => setOpenWithTransition(false)}
               >
                 <X aria-hidden="true" size={18} />
               </button>
               <p className="mb-3 inline-flex rounded-full bg-[#FFD9E5] px-3 py-1 text-xs font-bold text-navy">
                 Hidden Gift Message
               </p>
-              <h2 className="pr-10 text-2xl font-bold text-navy" id="gift-message-title">
+              <h2 className="masked-text-reveal pr-10 text-2xl font-bold text-navy" id="gift-message-title">
                 A Small Note for the Next Step
               </h2>
               <p className="mt-5 text-base leading-8 text-muted">

@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { ChevronRight } from "lucide-react";
 import type { PortfolioProject } from "../data/projects";
+import { updateSpotlightPosition } from "../utils/interaction";
 import { EvidenceTable } from "./EvidenceTable";
 import { ProcessTimeline } from "./ProcessTimeline";
 
@@ -11,7 +12,7 @@ type ProjectCardProps = {
 
 export function ProjectCard({ project, children }: ProjectCardProps): JSX.Element {
   return (
-    <article className="card p-5 sm:p-7">
+    <article className="card spotlight-card gradient-border-card sticky-stack-card p-5 sm:p-7" onPointerMove={updateSpotlightPosition}>
       <div className="flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
         <div className="max-w-3xl">
           <p className="mb-2 text-sm font-bold text-green">{project.purpose}</p>

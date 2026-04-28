@@ -1,5 +1,6 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { skillGroups } from "../data/portfolio";
+import { updateSpotlightPosition } from "../utils/interaction";
 import { SectionTitle } from "./SectionTitle";
 import { SkillChip } from "./SkillChip";
 
@@ -20,11 +21,12 @@ export function Skills(): JSX.Element {
 
           return (
             <motion.article
-              className="card p-6"
+              className="card spotlight-card p-6"
               initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
               whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.35 }}
               transition={{ duration: 0.24, delay: shouldReduceMotion ? 0 : index * 0.05, ease: "easeOut" }}
+              onPointerMove={updateSpotlightPosition}
               key={group.title}
             >
               <div className="mb-5 flex items-center gap-3">

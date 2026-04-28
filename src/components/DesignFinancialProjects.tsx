@@ -32,7 +32,7 @@ function ProjectDashboardMini(): JSX.Element {
             <p className="text-sm text-muted">월별 매출과 비용 흐름을 함께 비교합니다.</p>
           </div>
         </div>
-        <div className="h-[250px]">
+        <div className="chart-grow h-[250px]">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart data={projectDashboardSeries} margin={{ top: 12, right: 8, left: 0, bottom: 0 }}>
               <CartesianGrid stroke="#E8E2DA" strokeDasharray="3 3" vertical={false} />
@@ -57,7 +57,7 @@ function ProjectDashboardMini(): JSX.Element {
             </li>
           ))}
         </ul>
-        <div className="mt-6 h-[160px]">
+        <div className="chart-grow mt-6 h-[160px]">
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={projectDashboardSeries} margin={{ top: 10, right: 8, left: -24, bottom: 0 }}>
               <XAxis dataKey="month" stroke="#6B6B6B" tickLine={false} axisLine={false} />

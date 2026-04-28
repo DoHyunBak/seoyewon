@@ -1,5 +1,6 @@
 import { ExternalLink } from "lucide-react";
 import { portfolioOwner } from "../data/portfolio";
+import { updateSpotlightPosition } from "../utils/interaction";
 import { CopyEmailButton } from "./CopyEmailButton";
 import { PdfDownloadButton } from "./PdfDownloadButton";
 import { SectionTitle } from "./SectionTitle";
@@ -11,7 +12,7 @@ type DownloadSectionProps = {
 export function DownloadSection({ onEmailCopied }: DownloadSectionProps): JSX.Element {
   return (
     <section className="section-shell section-spacing" id="download">
-      <div className="card grid gap-8 p-6 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-center">
+      <div className="card spotlight-card gradient-border-card grid gap-8 p-6 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-center" onPointerMove={updateSpotlightPosition}>
         <SectionTitle
           align="left"
           eyebrow="PDF Download"

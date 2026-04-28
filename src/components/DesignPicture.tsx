@@ -1,6 +1,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { Image, Palette } from "lucide-react";
 import { designPictures } from "../data/portfolio";
+import { updateSpotlightPosition } from "../utils/interaction";
 import { SectionTitle } from "./SectionTitle";
 
 const toneClass = {
@@ -23,12 +24,13 @@ export function DesignPicture(): JSX.Element {
       <div className="grid gap-5 md:grid-cols-3">
         {designPictures.map((picture, index) => (
           <motion.article
-            className="card overflow-hidden"
+            className="card spotlight-card overflow-hidden"
             initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
             key={picture.title}
             transition={{ duration: 0.24, delay: shouldReduceMotion ? 0 : index * 0.06, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.35 }}
             whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
+            onPointerMove={updateSpotlightPosition}
           >
             <div className={`relative aspect-[4/5] bg-gradient-to-br ${toneClass[picture.tone as keyof typeof toneClass]}`}>
               <div className="absolute inset-5 rounded-md border border-white/55 bg-white/18" aria-hidden="true" />

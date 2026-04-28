@@ -29,8 +29,8 @@ export function Hero({ onEmailCopied }: HeroProps): JSX.Element {
           Design + Financial Portfolio
         </p>
         <h1 className="masked-text-reveal max-w-4xl text-[2.25rem] font-bold leading-[1.1] text-navy [overflow-wrap:anywhere] sm:text-[3rem] lg:text-[3.5rem]">
-          <span className="block">Design Major with</span>
-          <span className="block">a Growing Finance</span>
+          <span className="block">Finance Assistant</span>
+          <span className="block">with Design</span>
           <span className="block">Perspective.</span>
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-8 text-muted [overflow-wrap:anywhere]">

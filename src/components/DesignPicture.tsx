@@ -6,7 +6,7 @@ import { SectionTitle } from "./SectionTitle";
 const toneClass = {
   navy: "from-[#1F2A44] via-[#596476] to-[#FAF7F2]",
   green: "from-[#3A7D5A] via-[#9BB6A3] to-[#FAF7F2]",
-  pink: "from-[#F3B6C8] via-[#F7D9E2] to-[#FAF7F2]"
+  pink: "from-[#FFD9E5] via-[#FFF0F5] to-[#FAF7F2]"
 };
 
 export function DesignPicture(): JSX.Element {
@@ -16,7 +16,7 @@ export function DesignPicture(): JSX.Element {
     <section className="section-shell section-spacing" id="design-picture">
       <SectionTitle
         eyebrow="Design Picture"
-        title="디자인 작업 이미지를 보여주는 영역"
+        title="Design Picture Gallery"
         description="주얼리·패션 디자인 전공의 시각 자료를 배치해, 숫자 정리 역량만 앞서 보이지 않도록 균형을 맞춥니다."
       />
 

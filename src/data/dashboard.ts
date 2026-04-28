@@ -29,7 +29,7 @@ export const costBreakdownData = [
   { name: "외주비", value: 2860000, color: "#3A7D5A" },
   { name: "제작비", value: 1760000, color: "#1F2A44" },
   { name: "촬영비", value: 920000, color: "#A4B8AA" },
-  { name: "라이선스", value: 620000, color: "#F3B6C8" },
+  { name: "라이선스", value: 620000, color: "#FFD9E5" },
   { name: "운영비", value: 1190000, color: "#C7B8A6" }
 ];
 

@@ -12,7 +12,7 @@ export function Certificates(): JSX.Element {
     <section className="section-shell section-spacing" id="certificates">
       <SectionTitle
         eyebrow="Certificates"
-        title="자격증과 학습 상태를 명확하게 구분"
+        title="Certificate and Learning Status"
         description="취득 예정, 학습 중, 활용 가능 상태를 구분해 허위 이력처럼 보이지 않도록 구성했습니다."
       />
 

@@ -9,7 +9,7 @@
   --color-muted: #6B6B6B;
   --color-navy: #1F2A44;
   --color-green: #3A7D5A;
-  --color-pink: #F3B6C8;
+  --color-pink: #FFD9E5;
   --color-border: #E8E2DA;
 
   --radius-sm: 12px;
@@ -129,7 +129,7 @@ a {
   }
 
   .btn-soft {
-    @apply border border-border bg-[#FFF4F7] text-navy hover:-translate-y-0.5 hover:border-pink;
+    @apply border border-border bg-[#FFD9E5] text-navy hover:-translate-y-0.5 hover:border-pink;
   }
 
   .tag {

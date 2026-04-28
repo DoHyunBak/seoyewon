@@ -64,12 +64,12 @@ export const designFinancialProjects: PortfolioProject[] = [
       { label: "관리 기준", value: "D+7", helper: "지급 예정일 예시" }
     ],
     processSteps: [
-      { title: "외주 계약", description: "업무 범위와 지급 조건을 정리합니다.", status: "계약 완료" },
-      { title: "작업 완료", description: "결과물 제출일과 산출물을 확인합니다.", status: "작업 완료" },
-      { title: "검수 완료", description: "수정 요청과 최종 승인 여부를 기록합니다.", status: "검수 완료" },
-      { title: "증빙 확인", description: "세금계산서 또는 원천세 처리 기준을 확인합니다.", status: "증빙 확인" },
-      { title: "지급 예정", description: "지급 예정일과 계좌 확인 여부를 관리합니다.", status: "지급 예정" },
-      { title: "지급 완료", description: "지급 완료일과 회계 처리 메모를 남깁니다.", status: "지급 완료" }
+      { title: "Outsourcing Contract", description: "업무 범위와 지급 조건을 정리합니다.", status: "계약 완료" },
+      { title: "Work Completed", description: "결과물 제출일과 산출물을 확인합니다.", status: "작업 완료" },
+      { title: "Review Completed", description: "수정 요청과 최종 승인 여부를 기록합니다.", status: "검수 완료" },
+      { title: "Evidence Checked", description: "세금계산서 또는 원천세 처리 기준을 확인합니다.", status: "증빙 확인" },
+      { title: "Payment Scheduled", description: "지급 예정일과 계좌 확인 여부를 관리합니다.", status: "지급 예정" },
+      { title: "Payment Completed", description: "지급 완료일과 회계 처리 메모를 남깁니다.", status: "지급 완료" }
     ]
   },
   {

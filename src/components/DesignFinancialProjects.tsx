@@ -77,7 +77,7 @@ export function DesignFinancialProjects(): JSX.Element {
     <section className="section-shell section-spacing" id="projects">
       <SectionTitle
         eyebrow="Design Financial Projects"
-        title="실무 가능성을 보여주는 3개의 프로젝트"
+        title="Three Practical Portfolio Projects"
         description="프로젝트 수는 3개로 제한하고, 매출·비용·증빙·정산·리포트 역량이 자연스럽게 드러나도록 구성했습니다."
       />
 

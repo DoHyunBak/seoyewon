@@ -11,7 +11,7 @@ export default {
         muted: "#6B6B6B",
         navy: "#1F2A44",
         green: "#3A7D5A",
-        pink: "#F3B6C8",
+        pink: "#FFD9E5",
         border: "#E8E2DA"
       },
       borderRadius: {

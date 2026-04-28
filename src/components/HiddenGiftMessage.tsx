@@ -25,7 +25,7 @@ export function HiddenGiftMessage(): JSX.Element {
     <section className="section-shell pb-10 text-center" id="gift-message">
       <button className="btn btn-soft mx-auto" type="button" onClick={() => setIsOpen(true)}>
         <Heart aria-hidden="true" size={17} />
-        <span>작은 메시지</span>
+        <span>Small Message</span>
       </button>
 
       <AnimatePresence>
@@ -48,18 +48,18 @@ export function HiddenGiftMessage(): JSX.Element {
               transition={{ duration: 0.22, ease: "easeOut" }}
             >
               <button
-                aria-label="메시지 닫기"
+                aria-label="Close message"
                 className="absolute right-4 top-4 inline-flex size-10 items-center justify-center rounded-full border border-border text-muted outline-none transition hover:text-navy focus-visible:ring-4 focus-visible:ring-pink/40"
                 type="button"
                 onClick={() => setIsOpen(false)}
               >
                 <X aria-hidden="true" size={18} />
               </button>
-              <p className="mb-3 inline-flex rounded-full bg-[#FFF4F7] px-3 py-1 text-xs font-bold text-[#B76F86]">
+              <p className="mb-3 inline-flex rounded-full bg-[#FFD9E5] px-3 py-1 text-xs font-bold text-navy">
                 Hidden Gift Message
               </p>
               <h2 className="pr-10 text-2xl font-bold text-navy" id="gift-message-title">
-                다음 시작을 위한 작은 응원
+                A Small Note for the Next Step
               </h2>
               <p className="mt-5 text-base leading-8 text-muted">
                 이 포트폴리오가 너의 다음 시작에 작은 힘이 되었으면 좋겠어. 너의 꼼꼼함과 꾸준함이 분명 좋은 결과로

@@ -12,7 +12,7 @@ export function Licence(): JSX.Element {
     <section className="section-shell section-spacing" id="licence">
       <SectionTitle
         eyebrow="Licence"
-        title="자격 준비와 라이선스 비용 이해"
+        title="Licence and Certificate Preparation"
         description="실제 경력처럼 보이기보다, 디자인 전공자가 비용·증빙·라이선스 항목을 어떻게 이해하고 있는지 차분하게 정리합니다."
       />
 

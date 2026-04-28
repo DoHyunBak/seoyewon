@@ -9,7 +9,7 @@ export function CoreStrength(): JSX.Element {
     <section className="section-shell section-spacing" id="core-strength">
       <SectionTitle
         eyebrow="Core Strength"
-        title="관심을 두고 키우는 3가지 역량"
+        title="Three Strengths in Progress"
         description="전공 기반의 디자인 이해를 바탕으로, 비용·증빙·자료 정리까지 차분하게 확장해가고 있는 역량입니다."
       />
 

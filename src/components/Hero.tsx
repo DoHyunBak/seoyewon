@@ -1,4 +1,4 @@
-import { ExternalLink, Mail, ReceiptText } from "lucide-react";
+import { ExternalLink, ReceiptText } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 import { heroKeywords, portfolioOwner } from "../data/portfolio";
 import { monthlySummary } from "../data/dashboard";
@@ -25,9 +25,9 @@ export function Hero({ onEmailCopied }: HeroProps): JSX.Element {
           Design + Financial Portfolio
         </p>
         <h1 className="max-w-4xl text-[2.25rem] font-bold leading-[1.1] text-navy [overflow-wrap:anywhere] sm:text-[3rem] lg:text-[3.5rem]">
-          <span className="block">디자인을 전공하며,</span>
-          <span className="block">비용과 정산 흐름도</span>
-          <span className="block">차분히 배우고 있습니다.</span>
+          <span className="block">Design Major with</span>
+          <span className="block">a Growing Finance</span>
+          <span className="block">Perspective.</span>
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-8 text-muted [overflow-wrap:anywhere]">
           <span className="block">{portfolioOwner.name} · {portfolioOwner.role}</span>
@@ -43,10 +43,10 @@ export function Hero({ onEmailCopied }: HeroProps): JSX.Element {
         </div>
 
         <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-          <PdfDownloadButton href={portfolioOwner.pdfUrl} label="PDF 포트폴리오" />
+          <PdfDownloadButton href={portfolioOwner.pdfUrl} label="PDF Portfolio" />
           <a className="btn btn-secondary" href={portfolioOwner.notionUrl} rel="noopener noreferrer" target="_blank">
             <ExternalLink aria-hidden="true" size={18} />
-            <span>Notion 열기</span>
+            <span>Open Notion</span>
           </a>
           <CopyEmailButton email={portfolioOwner.email} onCopied={onEmailCopied} variant="soft" />
         </div>

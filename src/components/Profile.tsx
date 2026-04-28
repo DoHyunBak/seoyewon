@@ -9,7 +9,7 @@ export function Profile(): JSX.Element {
     <section className="section-shell section-spacing" id="profile">
       <SectionTitle
         eyebrow="Profile"
-        title="Design + Financial 직무 방향성"
+        title="Design + Financial Direction"
         description="디자인 프로젝트의 비용 구조와 정산 흐름을 이해하고, 숫자와 증빙을 보기 좋게 정리하는 지원자 이미지를 전달합니다."
       />
 
@@ -21,7 +21,7 @@ export function Profile(): JSX.Element {
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.26, ease: "easeOut" }}
         >
-          <h3 className="text-2xl font-bold text-navy">지원자 소개</h3>
+          <h3 className="text-2xl font-bold text-navy">Profile Overview</h3>
           <div className="mt-5 space-y-4 text-base leading-8 text-muted">
             {profileHighlights.map((highlight) => (
               <p key={highlight}>{highlight}</p>

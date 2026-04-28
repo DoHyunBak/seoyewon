@@ -34,7 +34,7 @@ export function StatCard({
 }: StatCardProps): JSX.Element {
   const shouldReduceMotion = useReducedMotion();
   const [displayValue, setDisplayValue] = useState(shouldReduceMotion ? value : 0);
-  const toneClass = tone === "green" ? "text-green" : tone === "pink" ? "text-[#B76F86]" : "text-navy";
+  const toneClass = tone === "green" ? "text-green" : "text-navy";
 
   useEffect(() => {
     if (shouldReduceMotion) {

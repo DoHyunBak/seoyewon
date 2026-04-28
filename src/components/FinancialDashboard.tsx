@@ -82,7 +82,7 @@ export function FinancialDashboard(): JSX.Element {
     <section className="section-shell section-spacing" id="dashboard">
       <SectionTitle
         eyebrow="Financial Dashboard"
-        title="숫자와 증빙을 함께 읽는 미니 대시보드"
+        title="Mini Dashboard for Numbers and Evidence"
         description="Total Revenue, Total Expense, Outsourcing Cost, Receivables, Net Profit, Profit Rate를 KPI와 차트로 정리했습니다."
       />
 

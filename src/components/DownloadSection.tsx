@@ -15,16 +15,16 @@ export function DownloadSection({ onEmailCopied }: DownloadSectionProps): JSX.El
         <SectionTitle
           align="left"
           eyebrow="PDF Download"
-          title="채용 담당자가 저장하기 쉬운 포트폴리오 자료"
+          title="Downloadable Portfolio Materials"
           description="PDF 파일은 public/portfolio.pdf 경로를 기준으로 연결되어 있으며, Notion과 이메일 복사 버튼도 같은 위치에서 제공합니다."
         />
         <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
-          <PdfDownloadButton href={portfolioOwner.pdfUrl} label="PDF 다운로드" />
+          <PdfDownloadButton href={portfolioOwner.pdfUrl} label="Download PDF" />
           <a className="btn btn-secondary" href={portfolioOwner.notionUrl} rel="noopener noreferrer" target="_blank">
             <ExternalLink aria-hidden="true" size={18} />
-            <span>Notion 포트폴리오</span>
+            <span>Open Notion</span>
           </a>
-          <CopyEmailButton email={portfolioOwner.email} label="이메일 복사하기" onCopied={onEmailCopied} variant="soft" />
+          <CopyEmailButton email={portfolioOwner.email} label="Copy Email" onCopied={onEmailCopied} variant="soft" />
         </div>
         <p className="sr-only">PDF 다운로드, Notion 새 탭 열기, 이메일 복사 기능을 제공합니다.</p>
       </div>

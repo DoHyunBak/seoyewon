@@ -10,7 +10,7 @@ export function Skills(): JSX.Element {
     <section className="section-shell section-spacing" id="skills">
       <SectionTitle
         eyebrow="Skills"
-        title="직무 연관 역량을 한눈에 볼 수 있는 Skill Set"
+        title="Skill Set at a Glance"
         description="Design Industry, Financial, Data & Report, Tools 카테고리로 나누어 채용 담당자가 빠르게 스캔할 수 있게 구성했습니다."
       />
 

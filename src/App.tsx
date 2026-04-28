@@ -47,7 +47,7 @@ export function App(): JSX.Element {
         <Licence />
         <DesignPicture />
         <Language />
-        <DownloadSection onEmailCopied={showEmailCopiedToast} />
+        <DownloadSection />
         <Contact onEmailCopied={showEmailCopiedToast} />
         <HiddenGiftMessage />
       </main>

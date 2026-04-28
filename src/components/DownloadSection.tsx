@@ -1,15 +1,9 @@
-import { ExternalLink } from "lucide-react";
 import { portfolioOwner } from "../data/portfolio";
 import { updateSpotlightPosition } from "../utils/interaction";
-import { CopyEmailButton } from "./CopyEmailButton";
 import { PdfDownloadButton } from "./PdfDownloadButton";
 import { SectionTitle } from "./SectionTitle";
 
-type DownloadSectionProps = {
-  onEmailCopied: () => void;
-};
-
-export function DownloadSection({ onEmailCopied }: DownloadSectionProps): JSX.Element {
+export function DownloadSection(): JSX.Element {
   return (
     <section className="section-shell section-spacing" id="download">
       <div className="card spotlight-card gradient-border-card grid gap-8 p-6 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-center" onPointerMove={updateSpotlightPosition}>
@@ -17,17 +11,12 @@ export function DownloadSection({ onEmailCopied }: DownloadSectionProps): JSX.El
           align="left"
           eyebrow="PDF Download"
           title="Downloadable Portfolio Materials"
-          description="PDF 파일은 public/portfolio.pdf 경로를 기준으로 연결되어 있으며, Notion과 이메일 복사 버튼도 같은 위치에서 제공합니다."
+          description="채용 담당자가 포트폴리오 PDF를 바로 저장할 수 있도록 다운로드 버튼만 제공합니다."
         />
-        <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
+        <div className="flex">
           <PdfDownloadButton href={portfolioOwner.pdfUrl} label="Download PDF" />
-          <a className="btn btn-secondary" href={portfolioOwner.notionUrl} rel="noopener noreferrer" target="_blank">
-            <ExternalLink aria-hidden="true" size={18} />
-            <span>Open Notion</span>
-          </a>
-          <CopyEmailButton email={portfolioOwner.email} label="Copy Email" onCopied={onEmailCopied} variant="soft" />
         </div>
-        <p className="sr-only">PDF 다운로드, Notion 새 탭 열기, 이메일 복사 기능을 제공합니다.</p>
+        <p className="sr-only">PDF 포트폴리오 다운로드 기능을 제공합니다.</p>
       </div>
     </section>
   );

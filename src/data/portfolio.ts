@@ -47,24 +47,14 @@ export const profileFacts = [
   { label: "자료", value: "PDF Portfolio / Notion Portfolio" }
 ];
 
-export const licenceItems = [
+export const licenceGroups = [
   {
-    title: "Design Licence Cost",
-    status: "학습 중",
-    description: "폰트, 이미지, 소스, 제작물 사용 비용을 디자인 프로젝트 비용 항목으로 분류하는 학습입니다.",
-    points: ["폰트·이미지 라이선스 비용 구분", "상업적 사용 범위 확인", "프로젝트별 증빙 자료 정리"]
+    title: "Design",
+    items: ["GTQ 그래픽기술자격", "컴퓨터그래픽스운용기능사", "컬러리스트산업기사", "Adobe Certified Professional"]
   },
   {
-    title: "Accounting Certificate",
-    status: "취득 예정",
-    description: "전산회계와 전산세무 기본기를 바탕으로 디자인 업계 비용 정리 흐름을 이해하려는 준비 항목입니다.",
-    points: ["전산회계 1급 취득 예정", "전산세무 2급 학습 중", "부가세·원천세 기본 용어 학습"]
-  },
-  {
-    title: "Evidence Basics",
-    status: "활용 가능",
-    description: "세금계산서, 카드전표, 현금영수증을 항목별로 나누어 정리하는 기초 역량입니다.",
-    points: ["세금계산서와 카드전표 분류", "외주비 지급 상태 체크", "월별 정리표 구성"]
+    title: "Accounting",
+    items: ["전산회계 1급", "전산세무 2급", "FAT 1급", "TAT 2급"]
   }
 ];
 

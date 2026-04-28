@@ -3,19 +3,8 @@
     {
       "name": "Default",
       "files": [
-        "src/components/Navigation.tsx",
-        ".vscode/changelists.json",
-        "src/components/SectionTitle.tsx",
-        "src/components/DesignPicture.tsx",
-        "src/components/DownloadSection.tsx",
-        "src/components/HiddenGiftMessage.tsx",
-        "src/components/Language.tsx",
-        "src/components/Licence.tsx",
-        "src/components/Profile.tsx",
-        "src/components/Skills.tsx",
-        "src/components/DesignFinancialProjects.tsx",
-        "src/components/FinancialDashboard.tsx",
-        "src/components/Hero.tsx"
+        "index.html",
+        "src/styles/globals.css"
       ]
     }
   ],
